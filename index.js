@@ -48,14 +48,14 @@ function getAllStyles(options) {
     // Highlight CSS
     cssStyleSheets.push(path.join(__dirname + '/assets/highlight/styles/github.css'));
 
-    // Optional CSS
-    if (options.styles) {
-        cssStyleSheets.push(options.styles);
-    }
-
     // Some additional defaults such as margins
     if (options.defaultStyle) {
         cssStyleSheets.push(path.join(__dirname, '/assets/default.css'));
+    }
+
+    // Optional CSS
+    if (options.styles) {
+        cssStyleSheets.push(options.styles);
     }
 
     return getCssAsHtml(cssStyleSheets);

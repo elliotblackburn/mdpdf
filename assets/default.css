@@ -1,8 +1,8 @@
-body {
-    margin: 30px 50px 30px 50px;
+.markdown-body {
+    margin: 35px 40px 35px 40px;
     font-size: 11px;
 }
 
-#pageHeader {
-  color: red;
+.markdown-body p {
+  font-weight: 200;
 }

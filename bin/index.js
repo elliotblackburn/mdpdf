@@ -5,6 +5,10 @@ let argv = require('yargs')
     .option('source', {
         describe: 'The source markdown file with one of the following extensions: .md, .markdown, .mkd, .mkdown'
     })
+    .option('disableGhStyle', {
+        describe: 'Disable the default GitHub markdown stylesheet',
+        type: 'boolean'
+    })
     .option('style', {
         describe: 'A single css stylesheet you wish to apply to the PDF'
     })
@@ -36,10 +40,8 @@ if (!isMd(source)) {
 }
 let destination = source.slice(0, source.indexOf('.md')) + '.pdf';
 
-// Resolve paths
-
 let options = {
-    ghStyle: !argv.style,
+    ghStyle: !argv.disableGhStyle,
     defaultStyle: true,
     source: path.resolve(source),
     destination: path.resolve(destination),
