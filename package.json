@@ -1,0 +1,35 @@
+{
+  "name": "mdpdf",
+  "version": "1.0.0",
+  "description": "Markdown to PDF command line converter",
+  "main": "index.js",
+  "bin": {
+    "mdpdf": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluehatbrit/mdpdf.git"
+  },
+  "keywords": [
+    "markdown",
+    "md",
+    "pdf",
+    "converter"
+  ],
+  "author": "Elliot Blackburn <elliot.blackburn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bluehatbrit/mdpdf/issues"
+  },
+  "homepage": "https://github.com/bluehatbrit/mdpdf#readme",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "handlebars": "^4.0.6",
+    "html-pdf": "^2.1.0",
+    "marked": "^0.3.6",
+    "yargs": "^6.6.0"
+  }
+}
