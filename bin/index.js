@@ -22,9 +22,17 @@ let argv = require('yargs')
     .help()
     .argv;
 
+function isMd(path){
+  if(!path) return true;
+  var accepted = ["markdown", "md", "mkd", "mkdown", "ron"];
+  var current = path.split(".").pop();
+  if(accepted.indexOf(current) != -1) return true;
+  return false;
+}
+
 let source = argv.source;
 if (!isMd(source)) {
-    throw new Error('Source file must be a markdown file with extension .markdown, .md, .mkd, or .mkdown');
+    console.error('Source file must be a markdown file with extension .markdown, .md, .mkd, or .mkdown');
 }
 let destination = source.slice(0, source.indexOf('.md')) + '.pdf';
 
@@ -48,15 +56,7 @@ let options = {
 };
 
 mdpdf.convert(options).then((pdfPath) => {
-    console.log(pdfPath);
+    console.log('PDF created successfully at:', pdfPath);
 }).catch((err) => {
     console.error(err);
 });
-
-function isMd(path){
-  if(!path) return true;
-  var accepted = ["markdown", "md", "mkd", "mkdown", "ron"];
-  var current = path.split(".").pop();
-  if(accepted.indexOf(current) != -1) return true;
-  return false;
-}
