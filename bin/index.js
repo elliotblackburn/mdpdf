@@ -2,6 +2,7 @@
 let mdpdf = require('../');
 let path = require('path');
 let argv = require('yargs')
+    .version()
     .option('source', {
         describe: 'The source markdown file with one of the following extensions: .md, .markdown, .mkd, .mkdown'
     })
