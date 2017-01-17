@@ -54,6 +54,12 @@ let options = {
         base: 'file://' + __dirname + '/assets/',
         header: {
             height: argv.headerHeight ? argv.headerHeight + 'mm' : null
+        },
+        border: {
+            top: '10mm',
+            left: '10mm',
+            bottom: '10mm',
+            right: '10mm'
         }
     }
 };
@@ -62,4 +68,5 @@ mdpdf.convert(options).then((pdfPath) => {
     console.log('PDF created successfully at:', pdfPath);
 }).catch((err) => {
     console.error(err);
+    process.exitCode = 1;
 });
