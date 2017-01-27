@@ -27,9 +27,10 @@
   "homepage": "https://github.com/bluehatbrit/mdpdf#readme",
   "dependencies": {
     "bluebird": "^3.4.7",
+    "cheerio": "^0.22.0",
     "handlebars": "^4.0.6",
     "html-pdf": "^2.1.0",
-    "marked": "^0.3.6",
+    "showdown": "^1.6.0",
     "yargs": "^6.6.0"
   }
 }

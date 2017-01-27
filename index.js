@@ -1,7 +1,9 @@
 let Promise = require('bluebird');
 let fs = require('fs');
 let path = require('path');
-let marked = require('marked');
+let url = require('url');
+let showdown = require('showdown');
+let cheerio = require('cheerio');
 let pdf = require('html-pdf');
 let Handlebars = require('handlebars');
 Promise.promisifyAll(fs);
@@ -12,23 +14,10 @@ let layoutPath = path.join(__dirname, 'layout.hbs');
 // Syntax highlighting
 let highlightJs = path.join(__dirname, '/assets/highlight/highlight.pack.js');
 
-// Marked configuration
-marked.setOptions({
-    renderer: new marked.Renderer(),
-    gfm: true,
-    tables: true,
-    breaks: false,
-    pedantic: false,
-    sanitize: true,
-    smartLists: true,
-    smartypants: false
-});
-
 function getCssAsHtml(stylesheets) {
     // Read in all stylesheets and format them into HTML to
-    // be placed in the header. We have to do this because
-    // the normal <link...> doesn't work for the headers
-    // and footers.
+    // be placed in the header. We do this because the normal
+    // <link...> doesn't work for the headers and footers.
     let styleHtml = '';
     for(var i in stylesheets) {
         let style = fs.readFileSync(stylesheets[i], 'utf8');
@@ -53,12 +42,46 @@ function getAllStyles(options) {
         cssStyleSheets.push(path.join(__dirname, '/assets/default.css'));
     }
 
-    // Optional CSS
+    // Optional user given CSS
     if (options.styles) {
         cssStyleSheets.push(options.styles);
     }
 
     return getCssAsHtml(cssStyleSheets);
+}
+
+function parseMarkdownToHtml(markdown) {
+    showdown.setFlavor('github');
+    let converter = new showdown.Converter({
+        prefixHeaderId: false,
+        ghCompatibleHeaderId: true
+    });
+
+    return converter.makeHtml(markdown);
+}
+
+function processSrc(src) {
+    if (url.parse(src).protocol) {
+        // Has a protocol so should be absolute, jobs done
+        return src;
+    } else if (path.resolve(src) !== src) {
+        // Relative path with no protocol, prepend both
+        src = path.resolve(__dirname, src);
+        return 'file://' + src;
+    } else {
+        // Absolute path, just prepend a protocol
+        return 'file://' + src;
+    }
+}
+
+function qualifyImgSources(html) {
+    let $ = cheerio.load(html);
+
+    $('img').each(function(i, img) {
+        img.attribs.src = processSrc(img.attribs.src);
+    });
+
+    return $.html();
 }
 
 function convert(options) {
@@ -90,8 +113,12 @@ function convert(options) {
 
             return fs.readFileAsync(options.source, 'utf8');
         }).then(function(md) {
-            // Append the body
-            local.body = new Handlebars.SafeString(marked(md));
+            let content = parseMarkdownToHtml(md);
+
+            content = qualifyImgSources(content);
+
+            // Append final html to the template body
+            local.body = new Handlebars.SafeString(content);
 
             // Generate html from layout and templates
             let html = template(local);
@@ -101,7 +128,7 @@ function convert(options) {
                 fs.writeFileSync(options.debug, html);
             }
             
-            // Write PDF
+            // Create and write PDF to the desintation file
             pdf.create(html, options.pdf).toFile(options.destination, function(err, res) {
                 if (err) console.log(err);
                 
