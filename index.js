@@ -66,7 +66,7 @@ function processSrc(src) {
         return src;
     } else if (path.resolve(src) !== src) {
         // Relative path with no protocol, prepend both
-        src = path.resolve(__dirname, src);
+        src = path.resolve(process.cwd(), src);
         return 'file://' + src;
     } else {
         // Absolute path, just prepend a protocol
