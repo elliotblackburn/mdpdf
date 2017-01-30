@@ -23,7 +23,7 @@ function getCssAsHtml(stylesheets) {
         let style = fs.readFileSync(stylesheets[i], 'utf8');
         styleHtml += '<style>' + style + '</style>';
     }
-    
+
     return styleHtml;
 }
 
@@ -60,13 +60,13 @@ function parseMarkdownToHtml(markdown) {
     return converter.makeHtml(markdown);
 }
 
-function processSrc(src) {
+function processSrc(src, options) {
     if (url.parse(src).protocol) {
         // Has a protocol so should be absolute, jobs done
         return src;
     } else if (path.resolve(src) !== src) {
         // Relative path with no protocol, prepend both
-        src = path.resolve(process.cwd(), src);
+        src = path.resolve(options.assetDir, src);
         return 'file://' + src;
     } else {
         // Absolute path, just prepend a protocol
@@ -74,11 +74,11 @@ function processSrc(src) {
     }
 }
 
-function qualifyImgSources(html) {
+function qualifyImgSources(html, options) {
     let $ = cheerio.load(html);
 
     $('img').each(function(i, img) {
-        img.attribs.src = processSrc(img.attribs.src);
+        img.attribs.src = processSrc(img.attribs.src, options);
     });
 
     return $.html();
@@ -115,7 +115,7 @@ function convert(options) {
         }).then(function(md) {
             let content = parseMarkdownToHtml(md);
 
-            content = qualifyImgSources(content);
+            content = qualifyImgSources(content, options);
 
             // Append final html to the template body
             local.body = new Handlebars.SafeString(content);
@@ -127,13 +127,13 @@ function convert(options) {
                 // Write debug html
                 fs.writeFileSync(options.debug, html);
             }
-            
+
             // Create and write PDF to the desintation file
             pdf.create(html, options.pdf).toFile(options.destination, function(err, res) {
                 if (err) console.log(err);
-                
+
                 resolve(res.filename);
-            });   
+            });
         }).catch(function(err) {
             reject(err);
         });

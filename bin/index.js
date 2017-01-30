@@ -46,6 +46,7 @@ let options = {
     defaultStyle: true,
     source: path.resolve(source),
     destination: path.resolve(destination),
+    assetDir: path.dirname(path.resolve(source)),
     styles: argv.style ? path.resolve(argv.style) : null,
     header: argv.header ? path.resolve(argv.header) : null,
     debug: argv.debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
