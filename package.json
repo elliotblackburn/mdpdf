@@ -1,14 +1,17 @@
 {
   "name": "mdpdf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Markdown to PDF command line converter",
   "main": "index.js",
   "bin": {
     "mdpdf": "bin/index.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "files": [
+    "bin",
+    "assets",
+    "index.js",
+    "layout.hbs"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bluehatbrit/mdpdf.git"
