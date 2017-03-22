@@ -1,3 +1,9 @@
 .markdown-body {
     font-size: 11px;
 }
+
+img.emoji-img.emoji {
+  max-width: 11px;
+  max-height: 11px;
+  vertical-align: middle;
+}

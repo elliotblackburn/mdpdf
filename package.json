@@ -34,6 +34,7 @@
     "handlebars": "^4.0.6",
     "html-pdf": "^2.1.0",
     "showdown": "^1.6.0",
+    "showdown-emoji": "^1.0.3",
     "yargs": "^6.6.0"
   }
 }

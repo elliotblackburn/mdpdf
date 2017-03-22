@@ -3,6 +3,7 @@ let fs = require('fs');
 let path = require('path');
 let url = require('url');
 let showdown = require('showdown');
+let showdownEmoji = require('showdown-emoji');
 let cheerio = require('cheerio');
 let pdf = require('html-pdf');
 let Handlebars = require('handlebars');
@@ -54,7 +55,8 @@ function parseMarkdownToHtml(markdown) {
     showdown.setFlavor('github');
     let converter = new showdown.Converter({
         prefixHeaderId: false,
-        ghCompatibleHeaderId: true
+        ghCompatibleHeaderId: true,
+        extensions: [showdownEmoji]
     });
 
     return converter.makeHtml(markdown);
