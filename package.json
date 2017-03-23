@@ -1,6 +1,6 @@
 {
   "name": "mdpdf",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Markdown to PDF command line converter",
   "main": "index.js",
   "bin": {
