@@ -1,12 +1,13 @@
-let Promise = require('bluebird');
-let fs = require('fs');
-let path = require('path');
-let url = require('url');
-let showdown = require('showdown');
-let showdownEmoji = require('showdown-emoji');
-let cheerio = require('cheerio');
-let pdf = require('html-pdf');
-let Handlebars = require('handlebars');
+'use strict';
+const Promise = require('bluebird');
+const fs = require('fs');
+const path = require('path');
+const url = require('url');
+const showdown = require('showdown');
+const showdownEmoji = require('showdown-emoji');
+const cheerio = require('cheerio');
+const pdf = require('html-pdf');
+const Handlebars = require('handlebars');
 Promise.promisifyAll(fs);
 
 // Main layout template

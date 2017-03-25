@@ -14,8 +14,8 @@ Install locally to access the API.
 
 ## Example usage
 
-* `mdpdf --source README.md` - Simple convert using GitHub Markdown CSS and some additional basic stylings.
-* `mdpdf --source README.md --style styles.css --header header.hbs --headerHeight 22` - Convert with custom styling with a header of height 22mm.
+* `mdpdf README.md` - Simple convert using GitHub Markdown CSS and some additional basic stylings.
+* `mdpdf README.md --style styles.css --header header.hbs --hHeight 22` - Convert with custom styling with a header of height 22mm.
 
 ## Options
 
@@ -26,9 +26,9 @@ Install locally to access the API.
 ### Optional
 * `--style` A single css stylesheet you wish to apply to the PDF
 * `--header` A handlebars (.hbs) file to inject into the header of the PDF
-* `--headerHeight` The height of the header section in mm, this might take some fiddling to get just right.
+* `--hHeight` The height of the header section in mm, this might take some fiddling to get just right.
 * `--debug` Mdpdf converts the markdown into html before making a pdf, this saves out the html as well as the pdf.
-* `--help` The argument help menu
+* `--help` Display the help menu
 
 ## Emoji Support
 
@@ -41,7 +41,7 @@ The API is very straight forward with a single function `convert()` which takes 
 ### Example API Usage
 
 ```JavaScript
-let mdpdf = require('mdpdf');
+const mdpdf = require('mdpdf');
 
 let options = {
     source: path.join(__dirname, 'README.md'),
@@ -72,3 +72,4 @@ mdpdf.convert(options).then((pdfPath) => {
     * format - **required** Final document format, allowed values are "A3, A4, A5, Legal, Letter, Tabloid"
     * header - A sub object which contains some header settings
         * height - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
+    * border - The document borders
