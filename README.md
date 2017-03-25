@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/BlueHatbRit/mdpdf.svg?branch=master)](https://travis-ci.org/BlueHatbRit/mdpdf)
 # MDPDF - Markdown to PDF converter
 
 This is a command line markdown to pdf converter with support for page headers and footers. It's designed to be very configurable and take a custom stylesheet. Bundle the stylesheet and package with your project and let anyone generate the same PDF of your document.

@@ -36,7 +36,8 @@ describe('Convert CLI', function() {
                 const pdfExists = fs.existsSync('./README.pdf');
 
                 pdfExists.should.be.true();
-                stdout.should.equal('✨ PDF created successfully at: /Users/elliotblackburn/code/mdpdf/README.pdf');
+                stdout.should.startWith('✨ PDF created successfully at:');
+                stdout.should.endWith('README.pdf')
                 
                 done();
             }).catch(done);
@@ -53,7 +54,8 @@ describe('Convert CLI', function() {
 
                 pdfExists.should.be.true();
                 htmlExists.should.be.true();
-                stdout.should.equal('✨ PDF created successfully at: /Users/elliotblackburn/code/mdpdf/README.pdf');
+                stdout.should.startWith('✨ PDF created successfully at:');
+                stdout.should.endWith('README.pdf')
                 
                 done();
             }).catch(done);
@@ -68,7 +70,8 @@ describe('Convert CLI', function() {
                 const pdfExists = fs.existsSync('./output.pdf');
 
                 pdfExists.should.be.true();
-                stdout.should.equal('✨ PDF created successfully at: /Users/elliotblackburn/code/mdpdf/output.pdf');
+                stdout.should.startWith('✨ PDF created successfully at:');
+                stdout.should.endWith('output.pdf')
                 
                 done();
             }).catch(done);
