@@ -37,7 +37,7 @@ describe('Convert CLI', function() {
 
                 pdfExists.should.be.true();
                 stdout.should.startWith('✨ PDF created successfully at:');
-                stdout.should.endWith('README.pdf')
+                stdout.should.endWith('README.pdf');
                 
                 done();
             }).catch(done);
@@ -55,7 +55,7 @@ describe('Convert CLI', function() {
                 pdfExists.should.be.true();
                 htmlExists.should.be.true();
                 stdout.should.startWith('✨ PDF created successfully at:');
-                stdout.should.endWith('README.pdf')
+                stdout.should.endWith('README.pdf');
                 
                 done();
             }).catch(done);
@@ -71,7 +71,7 @@ describe('Convert CLI', function() {
 
                 pdfExists.should.be.true();
                 stdout.should.startWith('✨ PDF created successfully at:');
-                stdout.should.endWith('output.pdf')
+                stdout.should.endWith('output.pdf');
                 
                 done();
             }).catch(done);
