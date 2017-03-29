@@ -96,7 +96,7 @@ function convert(options) {
         }
 
         if (!options.destination) {
-            reject(new Error('Desintation path must be provided'));
+            reject(new Error('Destination path must be provided'));
         }
 
         let template = {};
