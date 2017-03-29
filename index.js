@@ -11,17 +11,17 @@ const Handlebars = require('handlebars');
 Promise.promisifyAll(fs);
 
 // Main layout template
-let layoutPath = path.join(__dirname, 'layout.hbs');
+const layoutPath = path.join(__dirname, 'layout.hbs');
 
 // Syntax highlighting
-let highlightJs = path.join(__dirname, '/assets/highlight/highlight.pack.js');
+const highlightJs = 'file://' + path.join(__dirname, '/assets/highlight/highlight.pack.js');
 
 function getCssAsHtml(stylesheets) {
     // Read in all stylesheets and format them into HTML to
     // be placed in the header. We do this because the normal
     // <link...> doesn't work for the headers and footers.
     let styleHtml = '';
-    for(var i in stylesheets) {
+    for (var i in stylesheets) {
         let style = fs.readFileSync(stylesheets[i], 'utf8');
         styleHtml += '<style>' + style + '</style>';
     }
@@ -100,6 +100,7 @@ function convert(options) {
         }
 
         let template = {};
+        
         let local = {
             highlightJs: highlightJs,
             css: new Handlebars.SafeString(getAllStyles(options))
