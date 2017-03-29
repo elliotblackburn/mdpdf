@@ -58,7 +58,7 @@ mdpdf.convert(options).then((pdfPath) => {
 ### Options
 
 * source - **required**, a full path to the source markdown file.
-* desintation - **required**, a full path to the destination (pdf) file.
+* destination - **required**, a full path to the destination (pdf) file.
 * styles - A full path to a single css stylesheet which is applied last to the PDF.
 * ghStyle - A boolean value of whether or not to use the GitHub Markdown CSS, set to `false` to turn this stylesheet off.
 * defaultStyle - A boolean value of whether or not to use the additional default styles. These styles provide some things like a basic border and font size. Set to `false` to turn stylesheet off.
