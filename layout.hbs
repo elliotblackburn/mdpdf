@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {{head}}
-
         {{css}}
 
         <script src="{{highlightJs}}"></script>
     </head>
     <body class="markdown-body">
-        {{header}}
+        {{!-- The header is treated differently,
+            so we need to add the class to it as well --}}
+        <div class="markdown-body" id="pageHeader">
+            {{header}}
+        </div>
+
         {{body}}
+
+        <div class="markdown-body" id="pageFooter">
+            {{footer}}
+        </div>
     </body>
 </html>

@@ -111,8 +111,14 @@ function convert(options) {
 
             // Read the header if one has been provided
             if (options.header) {
-                let header = fs.readFileSync(options.header, 'utf8');
+                const header = fs.readFileSync(options.header, 'utf8');
                 local.header = new Handlebars.SafeString(header);
+            }
+
+            // Read the footer if one has been provided
+            if (options.footer) {
+                const footer = fs.readFileSync(options.footer, 'utf8');
+                local.footer = new Handlebars.SafeString(footer);
             }
 
             return fs.readFileAsync(options.source, 'utf8');
