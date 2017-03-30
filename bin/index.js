@@ -31,6 +31,7 @@ const cli = meow(`
         h: 'header',
         f: 'footer',
         d: 'debug',
+        v: 'version'
     }
 });
 
