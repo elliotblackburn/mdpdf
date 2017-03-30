@@ -10,8 +10,9 @@
     "mdpdf": "bin/index.js"
   },
   "files": [
-    "bin",
     "assets",
+    "bin",
+    "examples",
     "tests",
     "layout.hbs"
   ],
