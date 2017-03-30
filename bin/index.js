@@ -69,6 +69,7 @@ let options = {
     debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
     pdf: {
         format: 'A4',
+        quality: '100',
         base: 'file://' + __dirname + '/assets/',
         header: {
             height: headerHeight ? headerHeight + 'mm' : null
