@@ -88,64 +88,77 @@ function qualifyImgSources(html, options) {
 }
 
 function convert(options) {
-    return new Promise((resolve, reject) => {
+    options = options || {};
+    if (!options.source) {
+        reject(new Error('Source path must be provided'));
+    }
 
-        options = options || {};
-        if (!options.source) {
-            reject(new Error('Source path must be provided'));
+    if (!options.destination) {
+        reject(new Error('Destination path must be provided'));
+    }
+
+    let template = {};
+    let local = {
+        highlightJs: highlightJs,
+        css: new Handlebars.SafeString(getAllStyles(options))
+    };
+
+    // Read the layout and compile it
+    return fs.readFileAsync(layoutPath, 'utf8').then(function(layout) {
+        template = Handlebars.compile(layout);
+
+        if (options.header) {
+            return fs.readFileAsync(options.header, 'utf8');
+        } else {
+            Promise.resolve();
+        }
+    }).then(function(headerContent) {
+        if (headerContent) {
+            local.header = new Handlebars.SafeString(headerContent);
         }
 
-        if (!options.destination) {
-            reject(new Error('Destination path must be provided'));
+        if (options.footer) {
+            return fs.readFileAsync(options.footer, 'utf8');
+        } else {
+            Promise.resolve();
+        }
+    }).then(function(footerContent) {
+        if (footerContent) {
+            local.footer = new Handlebars.SafeString(footerContent);
         }
 
-        let template = {};
+        return fs.readFileAsync(options.source, 'utf8');
+    }).then(function(md) {
+        let content = parseMarkdownToHtml(md);
+
+        content = qualifyImgSources(content, options);
+
+        // Append final html to the template body
+        local.body = new Handlebars.SafeString(content);
+
+        // Generate html from layout and templates
+        let html = template(local);
+
+        if (options.debug) {
+            // Write debug html
+            fs.writeFileSync(options.debug, html);
+        }
         
-        let local = {
-            highlightJs: highlightJs,
-            css: new Handlebars.SafeString(getAllStyles(options))
-        };
+        return createPdf(html, options);
+    });
+}
 
-        fs.readFileAsync(layoutPath, 'utf8').then(function(layout) {
-            template = Handlebars.compile(layout);
+function createPdf(html, options) {
 
-            // Read the header if one has been provided
-            if (options.header) {
-                const header = fs.readFileSync(options.header, 'utf8');
-                local.header = new Handlebars.SafeString(header);
-            }
-
-            // Read the footer if one has been provided
-            if (options.footer) {
-                const footer = fs.readFileSync(options.footer, 'utf8');
-                local.footer = new Handlebars.SafeString(footer);
-            }
-
-            return fs.readFileAsync(options.source, 'utf8');
-        }).then(function(md) {
-            let content = parseMarkdownToHtml(md);
-
-            content = qualifyImgSources(content, options);
-
-            // Append final html to the template body
-            local.body = new Handlebars.SafeString(content);
-
-            // Generate html from layout and templates
-            let html = template(local);
-
-            if (options.debug) {
-                // Write debug html
-                fs.writeFileSync(options.debug, html);
-            }
-
-            // Create and write PDF to the desintation file
-            pdf.create(html, options.pdf).toFile(options.destination, function(err, res) {
-                if (err) console.log(err);
-
+    // Promisify won't work due to html-pdf's construction so
+    // we wrap it in a promise ourselves.
+    return new Promise(function(resolve, reject) {
+        pdf.create(html, options.pdf).toFile(options.destination, function(err, res) {
+            if (err) {
+                reject(err);
+            } else {
                 resolve(res.filename);
-            });
-        }).catch(function(err) {
-            reject(err);
+            }
         });
     });
 }
