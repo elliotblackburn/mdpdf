@@ -18,9 +18,9 @@ const cli = meow(`
 
     Options:
         --style    A single css stylesheet you wish to apply to the PDF
-        --header   A handlebars (.hbs) file to inject into the header of the PDF
+        --header   A HTML (.html) file to inject into the header of the PDF (see documentation for details)
         --hHeight  The height of the header section in mm
-        --footer   A handlebars (.hbs) file to inject into the footer of the PDF
+        --footer   A HTML (.html) file to inject into the footer of the PDF (see documentation for details)
         --fHeight  The height of the footer section in mm
         --debug    Save the generated html for debugging
         --help     Display this menu
