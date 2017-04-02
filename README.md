@@ -1,7 +1,7 @@
 # MDPDF - Markdown to PDF converter
-[![Build Status](https://travis-ci.org/BlueHatbRit/mdpdf.svg?branch=master)](https://travis-ci.org/BlueHatbRit/mdpdf) [![NPM version](https://img.shields.io/npm/v/mdpdf.svg)](https://www.npmjs.com/package/mdpdf)
+[![Build Status](https://travis-ci.org/BlueHatbRit/mdpdf.svg?branch=master)](https://travis-ci.org/BlueHatbRit/mdpdf) [![Build status](https://ci.appveyor.com/api/projects/status/x0ng3luokjb9eosm/branch/master?svg=true)](https://ci.appveyor.com/project/BlueHatbRit/mdpdf/branch/master) [![NPM version](https://img.shields.io/npm/v/mdpdf.svg)](https://www.npmjs.com/package/mdpdf)
 
-This is a command line markdown to pdf converter with support for page headers and footers. It's designed to be very configurable and take a custom stylesheet. Bundle the stylesheet and package with your project and let anyone generate the same PDF of your document.
+A command line markdown to pdf converter with support for page headers, footers, and custom stylesheets. Mdpdf is incredibly configurable and has a JavaScript API for more extravogant usage.
 
 For examples of how to use headers and footers, see the [examples directory](./examples).
 

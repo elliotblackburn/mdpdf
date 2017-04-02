@@ -1,0 +1,25 @@
+# Test against the latest version of this Node.js version
+environment:
+  matrix:
+    - nodejs_version: "7"
+    - nodejs_version: "6"
+    - nodejs_version: "5"
+    - nodejs_version: "4"
+
+branches:
+  only:
+    - master
+
+install:
+  # Install the latest stable of the nodejs version
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm install
+
+test_script:
+  - node --version
+  - npm --version
+  - npm test
+
+# Nodejs projects don't "build"
+build: off
