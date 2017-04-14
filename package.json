@@ -26,7 +26,11 @@
     "pdf",
     "converter"
   ],
-  "author": "Elliot Blackburn <elliot.blackburn@gmail.com>",
+  "author": {
+    "name": "Elliot Blackburn",
+    "email": "Elliot.blackburn@gmail.com",
+    "url": "http://www.elliotblackburn.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bluehatbrit/mdpdf/issues"
