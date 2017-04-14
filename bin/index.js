@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
-const mdpdf = require('../');
 const path = require('path');
 const meow = require('meow');
+const mdpdf = require('../');
 
 const cli = meow(`
     Usage:
@@ -26,27 +26,31 @@ const cli = meow(`
         --help     Display this menu
         --version  Displays the application version
 `, {
-    alias: {
-        s: 'style',
-        h: 'header',
-        f: 'footer',
-        d: 'debug',
-        v: 'version'
-    }
+	alias: {
+		s: 'style',
+		h: 'header',
+		f: 'footer',
+		d: 'debug',
+		v: 'version'
+	}
 });
 
 function isMd(path) {
-    if(!path) return true;
-    var accepted = ["md"];
-    var current = path.split(".").pop();
-    if(accepted.indexOf(current) != -1) return true;
-    return false;
+	if (!path) {
+		return true;
+	}
+	const accepted = ['md'];
+	const current = path.split('.').pop();
+	if (accepted.indexOf(current) !== -1) {
+		return true;
+	}
+	return false;
 }
 
 const source = cli.input[0];
 if (!source || !isMd(source)) {
     // Invalid source, show help and exit
-    return cli.showHelp();
+	cli.showHelp();
 }
 
 const destination = cli.input[1] || source.slice(0, source.indexOf('.md')) + '.pdf';
@@ -57,38 +61,38 @@ const headerHeight = cli.flags.hHeight;
 const footer = cli.flags.footer;
 const footerHeight = cli.flags.fHeight;
 
-let options = {
-    ghStyle: style ? false : true,
-    defaultStyle: true,
-    source: path.resolve(source),
-    destination: path.resolve(destination),
-    assetDir: path.dirname(path.resolve(source)),
-    styles: style ? path.resolve(style) : null,
-    header: header ? path.resolve(header) : null,
-    footer: footer ? path.resolve(footer) : null,
-    debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
-    pdf: {
-        format: 'A4',
-        quality: '100',
-        base: 'file://' + __dirname + '/assets/',
-        header: {
-            height: headerHeight ? headerHeight + 'mm' : null
-        },
-        footer: {
-            height: footerHeight ? footerHeight + 'mm' : null
-        },
-        border: {
-            top: '10mm',
-            left: '10mm',
-            bottom: '10mm',
-            right: '10mm'
-        }
-    }
+const options = {
+	ghStyle: !style,
+	defaultStyle: true,
+	source: path.resolve(source),
+	destination: path.resolve(destination),
+	assetDir: path.dirname(path.resolve(source)),
+	styles: style ? path.resolve(style) : null,
+	header: header ? path.resolve(header) : null,
+	footer: footer ? path.resolve(footer) : null,
+	debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
+	pdf: {
+		format: 'A4',
+		quality: '100',
+		base: path.join('file://', __dirname, '/assets/'),
+		header: {
+			height: headerHeight ? headerHeight + 'mm' : null
+		},
+		footer: {
+			height: footerHeight ? footerHeight + 'mm' : null
+		},
+		border: {
+			top: '10mm',
+			left: '10mm',
+			bottom: '10mm',
+			right: '10mm'
+		}
+	}
 };
 
-mdpdf.convert(options).then((pdfPath) => {
-    console.log('✨ PDF created successfully at:', pdfPath);
-}).catch((err) => {
-    console.error(err);
-    process.exitCode = 1;
+mdpdf.convert(options).then(pdfPath => {
+	console.log('✨ PDF created successfully at:', pdfPath);
+}).catch(err => {
+	console.error(err);
+	process.exitCode = 1;
 });

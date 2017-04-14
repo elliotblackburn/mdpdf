@@ -4,7 +4,7 @@
   "description": "Markdown to PDF command line converter",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests/index.js"
+    "test": "xo && mocha ./tests/index.js"
   },
   "bin": {
     "mdpdf": "bin/index.js"
@@ -20,7 +20,12 @@
     "type": "git",
     "url": "git+https://github.com/bluehatbrit/mdpdf.git"
   },
-  "keywords": ["markdown", "md", "pdf", "converter"],
+  "keywords": [
+    "markdown",
+    "md",
+    "pdf",
+    "converter"
+  ],
   "author": "Elliot Blackburn <elliot.blackburn@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -39,6 +44,16 @@
   "devDependencies": {
     "execa": "^0.6.3",
     "mocha": "^3.2.0",
-    "should": "^11.2.1"
+    "should": "^11.2.1",
+    "xo": "^0.18.1"
+  },
+  "xo": {
+    "ignores": [
+      "assets/**",
+      "tests/**"
+    ],
+    "rules": {
+      "no-use-extend-native/no-use-extend-native": 0
+    }
   }
 }
