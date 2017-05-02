@@ -68,25 +68,23 @@ function parseMarkdownToHtml(markdown) {
 }
 
 function hasAcceptableProtocol(src) {
-    const acceptableProtocols = ['http:', 'https:'].join('|');
+	const acceptableProtocols = ['http:', 'https:'].join('|');
 
-    let theUrl = url.parse(src);
+	const theUrl = url.parse(src);
 
-    if (!theUrl.protocol) {
-        return false;
-    } else {
-        return new RegExp(acceptableProtocols).test(src);
-    }
+	if (!theUrl.protocol) {
+		return false;
+	}
+	return new RegExp(acceptableProtocols).test(src);
 }
 
-function processSrc(src, options) {
-    if (hasAcceptableProtocol(src)) {
+function processSrc(src) {
+	if (hasAcceptableProtocol(src)) {
         // The protocol is great and okay!
-        return src;
-    } else {
+		return src;
+	}
         // We need to convert it
-        return fileUrl(src);
-    }
+	return fileUrl(src);
 }
 
 function qualifyImgSources(html, options) {
