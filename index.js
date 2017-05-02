@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
+const fileUrl = require('file-url');
 const Promise = require('bluebird');
 const showdown = require('showdown');
 const showdownEmoji = require('showdown-emoji');
@@ -66,17 +67,24 @@ function parseMarkdownToHtml(markdown) {
 	return converter.makeHtml(markdown);
 }
 
-function processSrc(src, options) {
-	if (url.parse(src).protocol) {
-        // Has a protocol so should be absolute, jobs done
-		return src;
-	} else if (path.resolve(src) !== src) {
-        // Relative path with no protocol, prepend both
-		src = path.resolve(options.assetDir, src);
-		return 'file://' + src;
+function hasAcceptableProtocol(src) {
+	const acceptableProtocols = ['http:', 'https:'].join('|');
+
+	const theUrl = url.parse(src);
+
+	if (!theUrl.protocol) {
+		return false;
 	}
-        // Absolute path, just prepend a protocol
-	return 'file://' + src;
+	return new RegExp(acceptableProtocols).test(src);
+}
+
+function processSrc(src) {
+	if (hasAcceptableProtocol(src)) {
+        // The protocol is great and okay!
+		return src;
+	}
+        // We need to convert it
+	return fileUrl(src);
 }
 
 function qualifyImgSources(html, options) {
