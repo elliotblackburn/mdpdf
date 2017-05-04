@@ -78,13 +78,15 @@ function hasAcceptableProtocol(src) {
 	return new RegExp(acceptableProtocols).test(src);
 }
 
-function processSrc(src) {
+function processSrc(src, options) {
 	if (hasAcceptableProtocol(src)) {
         // The protocol is great and okay!
 		return src;
 	}
-        // We need to convert it
-	return fileUrl(src);
+
+	// We need to convert it
+	const resolvedSrc = path.resolve(options.assetDir, src);
+	return fileUrl(resolvedSrc);
 }
 
 function qualifyImgSources(html, options) {
