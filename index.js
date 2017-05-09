@@ -125,7 +125,8 @@ function convert(options) {
 		Promise.resolve();
 	}).then(headerContent => {
 		if (headerContent) {
-			local.header = new Handlebars.SafeString(headerContent);
+			const preparedHeader = qualifyImgSources(headerContent, options);
+			local.header = new Handlebars.SafeString(preparedHeader);
 		}
 
 		if (options.footer) {
@@ -134,7 +135,8 @@ function convert(options) {
 		Promise.resolve();
 	}).then(footerContent => {
 		if (footerContent) {
-			local.footer = new Handlebars.SafeString(footerContent);
+			const preparedFooter = qualifyImgSources(footerContent, options);
+			local.footer = new Handlebars.SafeString(preparedFooter);
 		}
 
 		return readFile(options.source, 'utf8');
