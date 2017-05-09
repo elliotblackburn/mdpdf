@@ -66,7 +66,6 @@ const options = {
 	defaultStyle: true,
 	source: path.resolve(source),
 	destination: path.resolve(destination),
-	assetDir: path.dirname(path.resolve(source)),
 	styles: style ? path.resolve(style) : null,
 	header: header ? path.resolve(header) : null,
 	footer: footer ? path.resolve(footer) : null,

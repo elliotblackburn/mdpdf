@@ -109,6 +109,8 @@ function convert(options) {
 		throw new Error('Destination path must be provided');
 	}
 
+	options.assetDir = path.dirname(path.resolve(options.source));
+
 	let template = {};
 	const local = {
 		highlightJs,
