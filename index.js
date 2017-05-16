@@ -56,13 +56,20 @@ function getAllStyles(options) {
 	return getCssAsHtml(cssStyleSheets);
 }
 
-function parseMarkdownToHtml(markdown) {
+function parseMarkdownToHtml(markdown, convertEmojis) {
 	showdown.setFlavor('github');
-	const converter = new showdown.Converter({
+	const options = {
 		prefixHeaderId: false,
-		ghCompatibleHeaderId: true,
-		extensions: [showdownEmoji]
-	});
+		ghCompatibleHeaderId: true
+	};
+
+	// Sometimes emojis can mess with time representations
+	// such as "00:00:00"
+	if (convertEmojis) {
+		options.extensions = [showdownEmoji];
+	}
+
+	const converter = new showdown.Converter(options);
 
 	return converter.makeHtml(markdown);
 }
@@ -143,7 +150,7 @@ function convert(options) {
 
 		return readFile(options.source, 'utf8');
 	}).then(md => {
-		let content = parseMarkdownToHtml(md);
+		let content = parseMarkdownToHtml(md, !options.noEmoji);
 
 		content = qualifyImgSources(content, options);
 

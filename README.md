@@ -22,11 +22,15 @@ Install locally to access the API.
 
 ## Options
 
-* `--style` A single css stylesheet you wish to apply to the PDF
-* `--header` A handlebars (.hbs) file to inject into the header of the PDF
-* `--hHeight` The height of the header section in mm, this might take some fiddling to get just right
-* `--debug` Mdpdf converts the markdown into html before making a pdf, this saves out the html as well as the pdf
-* `--help` Display the help menu
+* `--style`    A single css stylesheet you wish to apply to the PDF
+* `--header`   A HTML (.html) file to inject into the header of the PDF
+* `--hHeight`  The height of the header section in mm
+* `--footer`   A HTML (.html) file to inject into the footer of the PDF
+* `--fHeight`  The height of the footer section in mm
+* `--noEmoji`  Disables emoji conversions
+* `--debug`    Save the generated html for debugging
+* `--help`     Display this menu
+* `--version`  Displays the application version
 
 ## Emoji Support
 
