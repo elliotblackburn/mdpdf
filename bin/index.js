@@ -18,10 +18,11 @@ const cli = meow(`
 
     Options:
         --style    A single css stylesheet you wish to apply to the PDF
-        --header   A HTML (.html) file to inject into the header of the PDF (see documentation for details)
+        --header   A HTML (.html) file to inject into the header of the PDF
         --hHeight  The height of the header section in mm
-        --footer   A HTML (.html) file to inject into the footer of the PDF (see documentation for details)
+        --footer   A HTML (.html) file to inject into the footer of the PDF
         --fHeight  The height of the footer section in mm
+		--noEmoji  Disables emoji conversions
         --debug    Save the generated html for debugging
         --help     Display this menu
         --version  Displays the application version
@@ -69,6 +70,7 @@ const options = {
 	styles: style ? path.resolve(style) : null,
 	header: header ? path.resolve(header) : null,
 	footer: footer ? path.resolve(footer) : null,
+	noEmoji: cli.flags.noEmoji || false,
 	debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
 	pdf: {
 		format: 'A4',
