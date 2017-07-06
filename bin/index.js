@@ -17,15 +17,19 @@ const cli = meow(`
         $ mdpdf README.md --footer footer.hbs --fHeight 22 --debug
 
     Options:
-        --style    A single css stylesheet you wish to apply to the PDF
-        --header   A HTML (.html) file to inject into the header of the PDF
-        --hHeight  The height of the header section in mm
-        --footer   A HTML (.html) file to inject into the footer of the PDF
-        --fHeight  The height of the footer section in mm
-		--noEmoji  Disables emoji conversions
-        --debug    Save the generated html for debugging
-        --help     Display this menu
-        --version  Displays the application version
+        --style        A single css stylesheet you wish to apply to the PDF
+        --header       A HTML (.html) file to inject into the header of the PDF
+        --hHeight      The height of the header section in mm
+        --footer       A HTML (.html) file to inject into the footer of the PDF
+        --fHeight      The height of the footer section in mm
+        --marginTop    Top margin in mm (default: 10)
+        --marginLeft   Left margin in mm (default: 10)
+        --marginBottom Bottom margin in mm (default: 10)
+        --marginRight  Right margin in mm (default: 10)
+        --noEmoji      Disables emoji conversions
+        --debug        Save the generated html for debugging
+        --help         Display this menu
+        --version      Displays the application version
 `, {
 	alias: {
 		s: 'style',
@@ -61,6 +65,10 @@ const header = cli.flags.header;
 const headerHeight = cli.flags.hHeight;
 const footer = cli.flags.footer;
 const footerHeight = cli.flags.fHeight;
+const marginTop = cli.flags.marginTop;
+const marginLeft = cli.flags.marginLeft;
+const marginBottom = cli.flags.marginBottom;
+const marginRight = cli.flags.marginRight;
 
 const options = {
 	ghStyle: !style,
@@ -83,10 +91,10 @@ const options = {
 			height: footerHeight ? footerHeight + 'mm' : null
 		},
 		border: {
-			top: '10mm',
-			left: '10mm',
-			bottom: '10mm',
-			right: '10mm'
+			top: (marginTop ? marginTop : 10) + 'mm',
+			left: (marginLeft ? marginLeft : 10) + 'mm',
+			bottom: (marginBottom ? marginBottom : 10) + 'mm',
+			right: (marginRight ? marginRight : 10) + 'mm'
 		}
 	}
 };
