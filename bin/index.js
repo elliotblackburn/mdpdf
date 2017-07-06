@@ -19,13 +19,13 @@ const cli = meow(`
     Options:
         --style        A single css stylesheet you wish to apply to the PDF
         --header       A HTML (.html) file to inject into the header of the PDF
-        --hHeight      The height of the header section in mm
+        --hHeight      The height of the header section
         --footer       A HTML (.html) file to inject into the footer of the PDF
-        --fHeight      The height of the footer section in mm
-        --marginTop    Top margin in mm (default: 10)
-        --marginLeft   Left margin in mm (default: 10)
-        --marginBottom Bottom margin in mm (default: 10)
-        --marginRight  Right margin in mm (default: 10)
+        --fHeight      The height of the footer section
+        --marginTop    Top margin (default: 10mm)
+        --marginLeft   Left margin (default: 10mm)
+        --marginBottom Bottom margin (default: 10mm)
+        --marginRight  Right margin (default: 10mm)
         --noEmoji      Disables emoji conversions
         --debug        Save the generated html for debugging
         --help         Display this menu
@@ -85,16 +85,16 @@ const options = {
 		quality: '100',
 		base: path.join('file://', __dirname, '/assets/'),
 		header: {
-			height: headerHeight ? headerHeight + 'mm' : null
+			height: headerHeight || null
 		},
 		footer: {
-			height: footerHeight ? footerHeight + 'mm' : null
+			height: footerHeight || null
 		},
 		border: {
-			top: (marginTop ? marginTop : 10) + 'mm',
-			left: (marginLeft ? marginLeft : 10) + 'mm',
-			bottom: (marginBottom ? marginBottom : 10) + 'mm',
-			right: (marginRight ? marginRight : 10) + 'mm'
+			top: marginTop || '10mm',
+			left: marginLeft || '10mm',
+			bottom: marginBottom || '10mm',
+			right: marginRight || '10mm'
 		}
 	}
 };

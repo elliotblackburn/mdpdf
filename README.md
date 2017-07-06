@@ -24,13 +24,13 @@ Install locally to access the API.
 
 * `--style`         A single css stylesheet you wish to apply to the PDF
 * `--header`        A HTML (.html) file to inject into the header of the PDF
-* `--hHeight`       The height of the header section in mm
+* `--hHeight`       The height of the header section
 * `--footer`        A HTML (.html) file to inject into the footer of the PDF
-* `--fHeight`       The height of the footer section in mm
-* `--marginTop`     Top margin in mm (default: 10)
-* `--marginLeft`    Left margin in mm (default: 10)
-* `--marginBottom`  Bottom margin in mm (default: 10)
-* `--marginRight`   Right margin in mm (default: 10)
+* `--fHeight`       The height of the footer section
+* `--marginTop`     Top margin (default: 10mm)
+* `--marginLeft`    Left margin (default: 10mm)
+* `--marginBottom`  Bottom margin (default: 10mm)
+* `--marginRight`   Right margin (default: 10mm)
 * `--noEmoji`       Disables emoji conversions
 * `--debug`         Save the generated html for debugging
 * `--help`          Display this menu
