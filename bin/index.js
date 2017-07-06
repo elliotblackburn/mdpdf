@@ -22,10 +22,10 @@ const cli = meow(`
         --hHeight      The height of the header section
         --footer       A HTML (.html) file to inject into the footer of the PDF
         --fHeight      The height of the footer section
-        --marginTop    Top margin (default: 10mm)
-        --marginLeft   Left margin (default: 10mm)
-        --marginBottom Bottom margin (default: 10mm)
-        --marginRight  Right margin (default: 10mm)
+        --marginTop    Top margin (default: 20mm)
+        --marginLeft   Left margin (default: 20mm)
+        --marginBottom Bottom margin (default: 20mm)
+        --marginRight  Right margin (default: 20mm)
         --noEmoji      Disables emoji conversions
         --debug        Save the generated html for debugging
         --help         Display this menu
@@ -91,10 +91,10 @@ const options = {
 			height: footerHeight || null
 		},
 		border: {
-			top: marginTop || '10mm',
-			left: marginLeft || '10mm',
-			bottom: marginBottom || '10mm',
-			right: marginRight || '10mm'
+			top: marginTop || '20mm',
+			left: marginLeft || '20mm',
+			bottom: marginBottom || '20mm',
+			right: marginRight || '20mm'
 		}
 	}
 };
