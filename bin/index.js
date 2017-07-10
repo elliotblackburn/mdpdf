@@ -65,10 +65,10 @@ const header = cli.flags.header;
 const headerHeight = cli.flags.hHeight;
 const footer = cli.flags.footer;
 const footerHeight = cli.flags.fHeight;
-const marginTop = cli.flags.marginTop;
-const marginLeft = cli.flags.marginLeft;
-const marginBottom = cli.flags.marginBottom;
-const marginRight = cli.flags.marginRight;
+const borderTop = cli.flags.borderTop;
+const borderLeft = cli.flags.borderLeft;
+const borderBottom = cli.flags.borderBottom;
+const borderRight = cli.flags.borderRight;
 
 const options = {
 	ghStyle: !style,
@@ -91,10 +91,10 @@ const options = {
 			height: footerHeight || null
 		},
 		border: {
-			top: marginTop || '20mm',
-			left: marginLeft || '20mm',
-			bottom: marginBottom || '20mm',
-			right: marginRight || '20mm'
+			top: borderTop || '20mm',
+			left: borderLeft || '20mm',
+			bottom: borderBottom || '20mm',
+			right: borderRight || '20mm'
 		}
 	}
 };
