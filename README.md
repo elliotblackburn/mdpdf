@@ -36,6 +36,8 @@ Install locally to access the API.
 * `--help`                  - Display this menu
 * `--version`               - Display the application version
 
+Length parameters (`<height>` and `<size>`) require a unit. Valid units are `mm`, `cm`, `in` and `px`.
+
 ## Emoji Support
 
 In text emoji's are also supported, but there are a few instances of shorthand which do not work and require the longhand version, i.e. `:+1:` doesn't work but `:thumbsup:` will.
