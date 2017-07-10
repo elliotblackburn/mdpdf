@@ -9,27 +9,30 @@ const cli = meow(`
     Usage:
         $ mdpdf <source> [<destination>] [options]
 
-    <source> must be a markdown file, with the extension .md
+    <source> must be a markdown file, with the extension '.md'.
 
     Examples:
         $ mdpdf README.md
-        $ mdpdf README.md --style styles.css --header header.hbs --hHeight 22
-        $ mdpdf README.md --footer footer.hbs --fHeight 22 --debug
+        $ mdpdf README.md --style=styles.css --header=header.hbs --h-height=22mm
+        $ mdpdf README.md --footer=footer.hbs --f-height=22mm --debug
+        $ mdpdf README.md --border-left=30mm
 
     Options:
-        --style        A single css stylesheet you wish to apply to the PDF
-        --header       A HTML (.html) file to inject into the header of the PDF
-        --hHeight      The height of the header section
-        --footer       A HTML (.html) file to inject into the footer of the PDF
-        --fHeight      The height of the footer section
-        --marginTop    Top margin (default: 20mm)
-        --marginLeft   Left margin (default: 20mm)
-        --marginBottom Bottom margin (default: 20mm)
-        --marginRight  Right margin (default: 20mm)
-        --noEmoji      Disables emoji conversions
-        --debug        Save the generated html for debugging
-        --help         Display this menu
-        --version      Displays the application version
+        --style=<filename>      A single css stylesheet you wish to apply to the PDF
+        --header=<filename>     A HTML (.html) file to inject into the header of the PDF
+        --h-height=<height>     The height of the header section
+        --footer=<filename>     A HTML (.html) file to inject into the footer of the PDF
+        --f-height=<height>     The height of the footer section
+        --border-top=<size>     Top border (default: 20mm)
+        --border-left=<size>    Left border (default: 20mm)
+        --border-bottom=<size>  Bottom border (default: 20mm)
+        --border-right=<size>   Right border (default: 20mm)
+        --no-emoji              Disables emoji conversions
+        --debug                 Save the generated html for debugging
+        --help                  Display this menu
+        --version               Display the application version
+
+        Length parameters (<height> and <size>) require a unit. Valid units are mm, cm, in and px.
 `, {
 	alias: {
 		s: 'style',
