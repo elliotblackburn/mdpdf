@@ -22,15 +22,21 @@ Install locally to access the API.
 
 ## Options
 
-* `--style`    A single css stylesheet you wish to apply to the PDF
-* `--header`   A HTML (.html) file to inject into the header of the PDF
-* `--hHeight`  The height of the header section in mm
-* `--footer`   A HTML (.html) file to inject into the footer of the PDF
-* `--fHeight`  The height of the footer section in mm
-* `--noEmoji`  Disables emoji conversions
-* `--debug`    Save the generated html for debugging
-* `--help`     Display this menu
-* `--version`  Displays the application version
+* `--style=<filename>`      - A single css stylesheet you wish to apply to the PDF
+* `--header=<filename>`     - A HTML (.html) file to inject into the header of the PDF
+* `--h-height=<height>`     - The height of the header section
+* `--footer=<filename>`     - A HTML (.html) file to inject into the footer of the PDF
+* `--f-height=<height>`     - The height of the footer section
+* `--border-top=<size>`     - Top border (default: 20mm)
+* `--border-left=<size>`    - Left border (default: 20mm)
+* `--border-bottom=<size>`  - Bottom border (default: 20mm)
+* `--border-right=<size>`   - Right border (default: 20mm)
+* `--no-emoji`              - Disables emoji conversions
+* `--debug`                 - Save the generated html for debugging
+* `--help`                  - Display this menu
+* `--version`               - Display the application version
+
+Length parameters (`<height>` and `<size>`) require a unit. Valid units are `mm`, `cm`, `in` and `px`.
 
 ## Emoji Support
 
@@ -63,15 +69,15 @@ mdpdf.convert(options).then((pdfPath) => {
 
 ### Options
 
-* source - **required**, a full path to the source markdown file.
-* destination - **required**, a full path to the destination (pdf) file.
-* styles - A full path to a single css stylesheet which is applied last to the PDF.
-* ghStyle - A boolean value of whether or not to use the GitHub Markdown CSS, set to `false` to turn this stylesheet off.
-* defaultStyle - A boolean value of whether or not to use the additional default styles. These styles provide some things like a basic border and font size. Set to `false` to turn stylesheet off.
-* header - A full path to a the Handlebars (`.hbs`) file which will be your header. If you set this, you must set the header height (see below).
-* debug - When this is set the intermediate HTML will be saved into a file, the value of this field should be the full path to the destination HTML.
-* pdf - **required** An object which contains some sub parameters to control the final PDF document
-    * format - **required** Final document format, allowed values are "A3, A4, A5, Legal, Letter, Tabloid"
-    * header - A sub object which contains some header settings
-        * height - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
-    * border - The document borders
+* `source` (**required**) - Full path to the source markdown file.
+* `destination` (**required**) - Full path to the destination (pdf) file.
+* `styles` - Full path to a single css stylesheet which is applied last to the PDF.
+* `ghStyle` - Boolean value of whether or not to use the GitHub Markdown CSS, set to `false` to turn this stylesheet off.
+* `defaultStyle` - Boolean value of whether or not to use the additional default styles. These styles provide some things like a basic border and font size. Set to `false` to turn stylesheet off.
+* `header` - Full path to a the Handlebars (`.hbs`) file which will be your header. If you set this, you must set the header height (see below).
+* `debug` - When this is set the intermediate HTML will be saved into a file, the value of this field should be the full path to the destination HTML.
+* `pdf` (**required**) - An object which contains some sub parameters to control the final PDF document
+    * `format` (**required**) - Final document format, allowed values are "A3, A4, A5, Legal, Letter, Tabloid"
+    * `header` - A sub object which contains some header settings
+        * `height` - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
+    * `border` - The document borders
