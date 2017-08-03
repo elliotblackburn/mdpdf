@@ -23,6 +23,7 @@ const cli = meow(`
         --h-height=<height>     The height of the header section
         --footer=<filename>     A HTML (.html) file to inject into the footer of the PDF
         --f-height=<height>     The height of the footer section
+        --border=<size>         Border (top, left, bottom, right; default: 20mm)
         --border-top=<size>     Top border (default: 20mm)
         --border-left=<size>    Left border (default: 20mm)
         --border-bottom=<size>  Bottom border (default: 20mm)
@@ -68,10 +69,11 @@ const header = cli.flags.header;
 const headerHeight = cli.flags.hHeight;
 const footer = cli.flags.footer;
 const footerHeight = cli.flags.fHeight;
-const borderTop = cli.flags.borderTop;
-const borderLeft = cli.flags.borderLeft;
-const borderBottom = cli.flags.borderBottom;
-const borderRight = cli.flags.borderRight;
+const border = cli.flags.border || '20mm';
+const borderTop = cli.flags.borderTop || border;
+const borderLeft = cli.flags.borderLeft || border;
+const borderBottom = cli.flags.borderBottom || border;
+const borderRight = cli.flags.borderRight || border;
 
 const options = {
 	ghStyle: !style,
@@ -94,10 +96,10 @@ const options = {
 			height: footerHeight || null
 		},
 		border: {
-			top: borderTop || '20mm',
-			left: borderLeft || '20mm',
-			bottom: borderBottom || '20mm',
-			right: borderRight || '20mm'
+			top: borderTop,
+			left: borderLeft,
+			bottom: borderBottom,
+			right: borderRight
 		}
 	}
 };
