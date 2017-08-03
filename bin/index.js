@@ -23,6 +23,7 @@ const cli = meow(`
         --h-height=<height>     The height of the header section
         --footer=<filename>     A HTML (.html) file to inject into the footer of the PDF
         --f-height=<height>     The height of the footer section
+        --border=<size>         Border (top, left, bottom, right; default: 20mm)
         --border-top=<size>     Top border (default: 20mm)
         --border-left=<size>    Left border (default: 20mm)
         --border-bottom=<size>  Bottom border (default: 20mm)
