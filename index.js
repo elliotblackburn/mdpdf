@@ -9,6 +9,7 @@ const showdownEmoji = require('showdown-emoji');
 const cheerio = require('cheerio');
 const pdf = require('html-pdf');
 const Handlebars = require('handlebars');
+const loophole = require('loophole');
 
 const readFile = Promise.promisify(fs.readFile);
 
@@ -158,7 +159,7 @@ function convert(options) {
 		local.body = new Handlebars.SafeString(content);
 
         // Generate html from layout and templates
-		const html = template(local);
+		const html = loophole.allowUnsafeNewFunction(() => template(local));
 
 		if (options.debug) {
             // Write debug html

@@ -43,6 +43,7 @@
     "file-url": "^2.0.2",
     "handlebars": "^4.0.6",
     "html-pdf": "^2.1.0",
+    "loophole": "^1.1.0",
     "meow": "^3.7.0",
     "showdown": "^1.6.0",
     "showdown-emoji": "^1.0.3"
