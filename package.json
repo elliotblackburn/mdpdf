@@ -1,6 +1,6 @@
 {
   "name": "mdpdf",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Markdown to PDF command line converter",
   "main": "index.js",
   "scripts": {
@@ -10,23 +10,12 @@
   "bin": {
     "mdpdf": "bin/index.js"
   },
-  "files": [
-    "assets",
-    "bin",
-    "examples",
-    "tests",
-    "layout.hbs"
-  ],
+  "files": ["assets", "bin", "examples", "tests", "layout.hbs"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bluehatbrit/mdpdf.git"
   },
-  "keywords": [
-    "markdown",
-    "md",
-    "pdf",
-    "converter"
-  ],
+  "keywords": ["markdown", "md", "pdf", "converter"],
   "author": {
     "name": "Elliot Blackburn",
     "email": "Elliot.blackburn@gmail.com",
@@ -55,10 +44,7 @@
     "xo": "^0.18.1"
   },
   "xo": {
-    "ignores": [
-      "assets/**",
-      "tests/**"
-    ],
+    "ignores": ["assets/**", "tests/**"],
     "rules": {
       "no-use-extend-native/no-use-extend-native": 0
     }
