@@ -82,3 +82,5 @@ mdpdf.convert(options).then((pdfPath) => {
     * `header` - A sub object which contains some header settings
         * `height` - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
     * `border` - The document borders
+
+![](https://dev.kintra.co/i.gif?_ka=ew0KImFjY291bnRJZCI6IDEsDQoiY2FtcGFpZ24iOiAibWRwZGYiLA0KInR5cGUiOiAicGl4ZWwiDQp9)
