@@ -5,6 +5,8 @@ A command line markdown to pdf converter with support for page headers, footers,
 
 For examples of how to use headers and footers, see the [examples directory](./examples).
 
+**If you're using the [Atom text editor](https://atom.io/), checkout the [markdown-pdf](https://atom.io/packages/markdown-pdf) plugin which uses mdpdf.**
+
 ## Installation
 
 Install globally to use from the command line.
