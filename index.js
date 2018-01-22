@@ -56,7 +56,7 @@ function getAllStyles(options) {
 
 	// CSS in .config/mdpdf/style.css
 	if (typeof process.env.HOME !== 'undefined') {
-		const dotConfigCssPath = path.join(process.env.HOME, ".config", "mdpdf", "style.css");
+		const dotConfigCssPath = path.join(process.env.HOME, '.config', 'mdpdf', 'style.css');
 		if (fs.existsSync(dotConfigCssPath)) {
 			cssStyleSheets.push(dotConfigCssPath);
 		}
