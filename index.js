@@ -19,6 +19,9 @@ const layoutPath = path.join(__dirname, 'layout.hbs');
 // Syntax highlighting
 const highlightJs = 'file://' + path.join(__dirname, '/assets/highlight/highlight.pack.js');
 
+// Name of the environement variable
+const ENV_STYLES_NAME = 'MDPDF_STYLES';
+
 function getCssAsHtml(stylesheets) {
     // Read in all stylesheets and format them into HTML to
     // be placed in the header. We do this because the normal
@@ -54,11 +57,10 @@ function getAllStyles(options) {
 		cssStyleSheets.push(options.styles);
 	}
 
-	// CSS in .config/mdpdf/style.css
-	if (typeof process.env.HOME !== 'undefined') {
-		const dotConfigCssPath = path.join(process.env.HOME, '.config', 'mdpdf', 'style.css');
-		if (fs.existsSync(dotConfigCssPath)) {
-			cssStyleSheets.push(dotConfigCssPath);
+	// CSS specified by the environement variable
+	if (typeof process.env[ENV_STYLES_NAME] !== 'undefined') {
+		if (fs.existsSync(process.env[ENV_STYLES_NAME])) {
+			cssStyleSheets.push(process.env[ENV_STYLES_NAME]);
 		}
 	}
 
