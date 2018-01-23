@@ -58,10 +58,8 @@ function getAllStyles(options) {
 	}
 
 	// CSS specified by the environement variable
-	if (typeof process.env[ENV_STYLES_NAME] !== 'undefined') {
-		if (fs.existsSync(process.env[ENV_STYLES_NAME])) {
-			cssStyleSheets.push(process.env[ENV_STYLES_NAME]);
-		}
+	if (fs.existsSync(process.env[ENV_STYLES_NAME])) {
+		cssStyleSheets.push(process.env[ENV_STYLES_NAME]);
 	}
 
 	return getCssAsHtml(cssStyleSheets);
