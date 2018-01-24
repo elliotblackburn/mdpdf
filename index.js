@@ -19,9 +19,6 @@ const layoutPath = path.join(__dirname, 'layout.hbs');
 // Syntax highlighting
 const highlightJs = 'file://' + path.join(__dirname, '/assets/highlight/highlight.pack.js');
 
-// Name of the environement variable
-const ENV_STYLES_NAME = 'MDPDF_STYLES';
-
 function getCssAsHtml(stylesheets) {
     // Read in all stylesheets and format them into HTML to
     // be placed in the header. We do this because the normal
@@ -55,11 +52,6 @@ function getAllStyles(options) {
     // Optional user given CSS
 	if (options.styles) {
 		cssStyleSheets.push(options.styles);
-	}
-
-	// CSS specified by the environement variable
-	if (fs.existsSync(process.env[ENV_STYLES_NAME])) {
-		cssStyleSheets.push(process.env[ENV_STYLES_NAME]);
 	}
 
 	return getCssAsHtml(cssStyleSheets);
