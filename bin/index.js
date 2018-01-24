@@ -69,7 +69,7 @@ if (!source || !isMd(source)) {
 
 const destination = cli.input[1] || source.slice(0, source.indexOf('.md')) + '.pdf';
 const debug = cli.flags.debug || false;
-const style = cli.flags.style;
+let style = cli.flags.style;
 const header = cli.flags.header;
 const headerHeight = cli.flags.hHeight;
 const footer = cli.flags.footer;
@@ -85,11 +85,11 @@ const envStyleName = 'MDPDF_STYLES';
 
 // If styles have not been provided through the CLI flag, but the environment variable exists
 if (!style && process.env[envStyleName]) {
-  // Ensure the css file exists
-  const envCssPath = path.resolve(process.env[envStyleName]);
-  if (fs.existsSync(envCssPath)) {
-    styles = envCssPath;
-  }
+	// Ensure the css file exists
+	const envCssPath = path.resolve(process.env[envStyleName]);
+	if (fs.existsSync(envCssPath)) {
+		style = envCssPath;
+	}
 }
 
 const options = {
