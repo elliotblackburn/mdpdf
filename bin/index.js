@@ -2,6 +2,7 @@
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 const meow = require('meow');
 const mdpdf = require('../');
 
@@ -33,7 +34,11 @@ const cli = meow(`
         --help                  Display this menu
         --version               Display the application version
 
-        Length parameters (<height> and <size>) require a unit. Valid units are mm, cm, in and px.
+		Length parameters (<height> and <size>) require a unit. Valid units are mm, cm, in and px.
+		
+	Global Settings:
+		You can also set a global default stylesheet by setting the MDPDF_STYLES environment
+		variable as the path to your single css stylesheet. The --style flag will override this.
 `, {
 	alias: {
 		s: 'style',
@@ -74,6 +79,18 @@ const borderTop = cli.flags.borderTop || border;
 const borderLeft = cli.flags.borderLeft || border;
 const borderBottom = cli.flags.borderBottom || border;
 const borderRight = cli.flags.borderRight || border;
+
+// Name of the environement variable
+const envStyleName = 'MDPDF_STYLES';
+
+// If styles have not been provided through the CLI flag, but the environment variable exists
+if (!style && process.env[envStyleName]) {
+  // Ensure the css file exists
+  const envCssPath = path.resolve(process.env[envStyleName]);
+  if (fs.existsSync(envCssPath)) {
+    styles = envCssPath;
+  }
+}
 
 const options = {
 	ghStyle: !style,
