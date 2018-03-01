@@ -7,9 +7,7 @@ For examples of how to use headers and footers, see the [examples directory](./e
 
 **If you're using the [Atom text editor](https://atom.io/), checkout the [markdown-pdf](https://atom.io/packages/markdown-pdf) plugin which uses mdpdf.**
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/3b8PcwAUwfuhhQKcMKoHwVWe/BlueHatbRit/mdpdf'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/3b8PcwAUwfuhhQKcMKoHwVWe/BlueHatbRit/mdpdf.svg' />
-</a>
+<a href="https://www.buymeacoffee.com/elliot" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## Installation
 
@@ -92,3 +90,4 @@ mdpdf.convert(options).then((pdfPath) => {
     * `header` - A sub object which contains some header settings
         * `height` - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
     * `border` - The document borders
+    
