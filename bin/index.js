@@ -6,7 +6,8 @@ const fs = require('fs');
 const meow = require('meow');
 const mdpdf = require('../');
 
-const cli = meow(`
+const cli = meow(
+  `
     Usage:
         $ mdpdf <source> [<destination>] [options]
 
@@ -41,37 +42,40 @@ const cli = meow(`
 	Global Settings:
 		You can also set a global default stylesheet by setting the MDPDF_STYLES environment
 		variable as the path to your single css stylesheet. The --style flag will override this.
-`, {
-	alias: {
-		s: 'style',
-		h: 'header',
-		f: 'footer',
-		d: 'debug',
-		v: 'version',
-		r: 'format',
-		o: 'orientation'
-	}
-});
+`,
+  {
+    alias: {
+      s: 'style',
+      h: 'header',
+      f: 'footer',
+      d: 'debug',
+      v: 'version',
+      r: 'format',
+      o: 'orientation',
+    },
+  }
+);
 
 function isMd(path) {
-	if (!path) {
-		return true;
-	}
-	const accepted = ['md'];
-	const current = path.split('.').pop();
-	if (accepted.indexOf(current) !== -1) {
-		return true;
-	}
-	return false;
+  if (!path) {
+    return true;
+  }
+  const accepted = ['md'];
+  const current = path.split('.').pop();
+  if (accepted.indexOf(current) !== -1) {
+    return true;
+  }
+  return false;
 }
 
 const source = cli.input[0];
 if (!source || !isMd(source)) {
-    // Invalid source, show help and exit
-	cli.showHelp();
+  // Invalid source, show help and exit
+  cli.showHelp();
 }
 
-const destination = cli.input[1] || source.slice(0, source.indexOf('.md')) + '.pdf';
+const destination =
+  cli.input[1] || source.slice(0, source.indexOf('.md')) + '.pdf';
 const debug = cli.flags.debug || false;
 let style = cli.flags.style;
 const header = cli.flags.header;
@@ -91,46 +95,57 @@ const envStyleName = 'MDPDF_STYLES';
 
 // If styles have not been provided through the CLI flag, but the environment variable exists
 if (!style && process.env[envStyleName]) {
-	// Ensure the css file exists
-	const envCssPath = path.resolve(process.env[envStyleName]);
-	if (fs.existsSync(envCssPath)) {
-		style = envCssPath;
-	}
+  // Ensure the css file exists
+  const envCssPath = path.resolve(process.env[envStyleName]);
+  if (fs.existsSync(envCssPath)) {
+    style = envCssPath;
+  }
 }
 
 const options = {
-	ghStyle: !style,
-	defaultStyle: true,
-	source: path.resolve(source),
-	destination: path.resolve(destination),
-	styles: style ? path.resolve(style) : null,
-	header: header ? path.resolve(header) : null,
-	footer: footer ? path.resolve(footer) : null,
-	noEmoji: cli.flags.noEmoji || false,
-	debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
-	pdf: {
-		format: pdfFormat,
-		orientation: pdfOrientation,
-		quality: '100',
-		base: path.join('file://', __dirname, '/assets/'),
-		header: {
-			height: headerHeight || null
-		},
-		footer: {
-			height: footerHeight || null
-		},
-		border: {
-			top: borderTop,
-			left: borderLeft,
-			bottom: borderBottom,
-			right: borderRight
-		}
-	}
+  ghStyle: !style,
+  defaultStyle: true,
+  source: path.resolve(source),
+  destination: path.resolve(destination),
+  styles: style ? path.resolve(style) : null,
+  header: header ? path.resolve(header) : null,
+  footer: footer ? path.resolve(footer) : null,
+  noEmoji: cli.flags.noEmoji || false,
+  debug: debug
+    ? path.resolve(source.slice(0, source.indexOf('.md')) + '.html')
+    : null,
+  pdf: {
+    format: pdfFormat,
+    orientation: pdfOrientation,
+    quality: '100',
+    base: path.join('file://', __dirname, '/assets/'),
+    header: {
+      height: headerHeight || null,
+    },
+    footer: {
+      height: footerHeight || null,
+    },
+    border: {
+      top: borderTop,
+      left: borderLeft,
+      bottom: borderBottom,
+      right: borderRight,
+    },
+  },
 };
 
-mdpdf.convert(options).then(pdfPath => {
-	console.log('✨ PDF created successfully at:', pdfPath);
-}).catch(err => {
-	console.error(err);
-	process.exitCode = 1;
-});
+return mdpdf
+  .convert(options)
+  .then(pdfPath => {
+    // Pretty print for terminals, or just return the output
+    // path for scripts and pipes.
+    if (process.stdout.isTTY) {
+      console.log('✨ PDF created successfully at:', pdfPath);
+    } else {
+      console.log(pdfPath);
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    process.exitCode = 1;
+  });
