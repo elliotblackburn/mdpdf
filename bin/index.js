@@ -19,23 +19,25 @@ const cli = meow(`
         $ mdpdf README.md --border-left=30mm
 
     Options:
-        --style=<filename>      A single css stylesheet you wish to apply to the PDF
-        --header=<filename>     A HTML (.html) file to inject into the header of the PDF
-        --h-height=<height>     The height of the header section
-        --footer=<filename>     A HTML (.html) file to inject into the footer of the PDF
-        --f-height=<height>     The height of the footer section
-        --border=<size>         Border (top, left, bottom, right; default: 20mm)
-        --border-top=<size>     Top border (default: 20mm)
-        --border-left=<size>    Left border (default: 20mm)
-        --border-bottom=<size>  Bottom border (default: 20mm)
-        --border-right=<size>   Right border (default: 20mm)
-        --no-emoji              Disables emoji conversions
-        --debug                 Save the generated html for debugging
-        --help                  Display this menu
-        --version               Display the application version
+        --style=<filename>           A single css stylesheet you wish to apply to the PDF
+        --header=<filename>          A HTML (.html) file to inject into the header of the PDF
+        --h-height=<height>          The height of the header section
+        --footer=<filename>          A HTML (.html) file to inject into the footer of the PDF
+        --f-height=<height>          The height of the footer section
+        --border=<size>              Border (top, left, bottom, right; default: 20mm)
+        --border-top=<size>          Top border (default: 20mm)
+        --border-left=<size>         Left border (default: 20mm)
+        --border-bottom=<size>       Bottom border (default: 20mm)
+        --border-right=<size>        Right border (default: 20mm)
+        --no-emoji                   Disables emoji conversions
+        --debug                      Save the generated html for debugging
+        --help                       Display this menu
+        --version                    Display the application version
+        --format=<format>            PDF size format: A3, A4, A5, Legal, Letter, Tabloid (Default: A4)
+        --orientation=<orientation>  PDF orientation: portrait or landscape (Default: portrait)
 
 		Length parameters (<height> and <size>) require a unit. Valid units are mm, cm, in and px.
-		
+
 	Global Settings:
 		You can also set a global default stylesheet by setting the MDPDF_STYLES environment
 		variable as the path to your single css stylesheet. The --style flag will override this.
@@ -45,7 +47,9 @@ const cli = meow(`
 		h: 'header',
 		f: 'footer',
 		d: 'debug',
-		v: 'version'
+		v: 'version',
+		r: 'format',
+		o: 'orientation'
 	}
 });
 
@@ -79,6 +83,8 @@ const borderTop = cli.flags.borderTop || border;
 const borderLeft = cli.flags.borderLeft || border;
 const borderBottom = cli.flags.borderBottom || border;
 const borderRight = cli.flags.borderRight || border;
+const pdfFormat = cli.flags.format || 'A4';
+const pdfOrientation = cli.flags.orientation || 'portrait';
 
 // Name of the environement variable
 const envStyleName = 'MDPDF_STYLES';
@@ -103,7 +109,8 @@ const options = {
 	noEmoji: cli.flags.noEmoji || false,
 	debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
 	pdf: {
-		format: 'A4',
+		format: pdfFormat,
+		orientation: pdfOrientation,
 		quality: '100',
 		base: path.join('file://', __dirname, '/assets/'),
 		header: {
