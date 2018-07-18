@@ -48,6 +48,7 @@ const cli = meow(`
 		f: 'footer',
 		d: 'debug',
 		v: 'version',
+		r: 'format',
 		o: 'orientation'
 	}
 });
@@ -82,8 +83,8 @@ const borderTop = cli.flags.borderTop || border;
 const borderLeft = cli.flags.borderLeft || border;
 const borderBottom = cli.flags.borderBottom || border;
 const borderRight = cli.flags.borderRight || border;
-const format = cli.flags.format || 'A4';
-const orientation = cli.flags.orientation || 'portrait';
+const pdfFormat = cli.flags.format || 'A4';
+const pdfOrientation = cli.flags.orientation || 'portrait';
 
 // Name of the environement variable
 const envStyleName = 'MDPDF_STYLES';
@@ -108,8 +109,8 @@ const options = {
 	noEmoji: cli.flags.noEmoji || false,
 	debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
 	pdf: {
-		format: format,
-		orientation: orientation,
+		format: pdfFormat,
+		orientation: pdfOrientation,
 		quality: '100',
 		base: path.join('file://', __dirname, '/assets/'),
 		header: {
