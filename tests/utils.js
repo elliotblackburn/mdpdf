@@ -17,7 +17,7 @@ const createOptions = function (options) {
 		debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
 		pdf: {
 			format: 'A4',
-      orientation: 'portrait',
+			orientation: 'portrait',
 			base: path.join('file://', __dirname, '/assets/'),
 			header: {
 				height: null

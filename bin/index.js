@@ -48,7 +48,7 @@ const cli = meow(`
 		f: 'footer',
 		d: 'debug',
 		v: 'version',
-    o: 'orientation'
+		o: 'orientation'
 	}
 });
 
@@ -109,7 +109,7 @@ const options = {
 	debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
 	pdf: {
 		format: format,
-    orientation: orientation,
+		orientation: orientation,
 		quality: '100',
 		base: path.join('file://', __dirname, '/assets/'),
 		header: {
