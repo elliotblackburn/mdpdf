@@ -11,6 +11,7 @@ const options = {
 	header: path.join(__dirname, 'header.hbs'),
 	pdf: {
 		format: 'A4',
+    orientation: 'portrait',
 		quality: '100',
 		header: {
 			height: '20mm'

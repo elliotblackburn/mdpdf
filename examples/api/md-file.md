@@ -44,7 +44,8 @@ let options = {
     destination: path.join(__dirname, 'output.pdf'),
     styles: path.join(__dirname, 'md-styles.css'),
     pdf: {
-        format: 'A4'
+        format: 'A4',
+        orientation: 'portrait',
     }
 };
 
@@ -66,6 +67,7 @@ mdpdf.convert(options).then((pdfPath) => {
 * debug - When this is set the intermediate HTML will be saved into a file, the value of this field should be the full path to the destination HTML.
 * pdf - **required** An object which contains some sub parameters to control the final PDF document
     * format - **required** Final document format, allowed values are "A3, A4, A5, Legal, Letter, Tabloid"
+    * orientation - Final document size orientation, allowed values are "potrait, orientation"
     * header - A sub object which contains some header settings
         * height - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
     * border - The document borders
