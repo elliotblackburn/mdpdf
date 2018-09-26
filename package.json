@@ -1,11 +1,11 @@
 {
   "name": "mdpdf",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Markdown to PDF command line converter",
   "main": "index.js",
   "scripts": {
     "lint": "xo",
-    "test": "xo && mocha ./tests/index.js"
+    "test": "mocha ./tests/index.js"
   },
   "bin": {
     "mdpdf": "bin/index.js"
@@ -42,17 +42,17 @@
     "cheerio": "^0.22.0",
     "file-url": "^2.0.2",
     "handlebars": "^4.0.6",
-    "html-pdf": "^2.1.0",
+    "html-pdf": "^2.2.0",
     "loophole": "^1.1.0",
     "meow": "^3.7.0",
     "showdown": "^1.6.0",
-    "showdown-emoji": "^1.0.3"
+    "showdown-emoji": "^1.0.3",
+    "xo": "^0.23.0"
   },
   "devDependencies": {
     "execa": "^0.6.3",
-    "mocha": "^3.2.0",
-    "should": "^11.2.1",
-    "xo": "^0.18.1"
+    "mocha": "^5.2.0",
+    "should": "^11.2.1"
   },
   "xo": {
     "ignores": [
