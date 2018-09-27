@@ -65,6 +65,7 @@ The API is very straight forward with a single function `convert()` which takes 
 
 ```JavaScript
 const mdpdf = require('mdpdf');
+const path = require('path');
 
 let options = {
     source: path.join(__dirname, 'README.md'),
