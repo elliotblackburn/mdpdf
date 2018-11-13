@@ -46,13 +46,13 @@
     "loophole": "^1.1.0",
     "meow": "^3.7.0",
     "showdown": "^1.6.0",
-    "showdown-emoji": "^1.0.3",
-    "xo": "^0.23.0"
+    "showdown-emoji": "^1.0.3"
   },
   "devDependencies": {
     "execa": "^0.6.3",
     "mocha": "^5.2.0",
-    "should": "^11.2.1"
+    "should": "^11.2.1",
+    "xo": "^0.23.0"
   },
   "xo": {
     "ignores": [
