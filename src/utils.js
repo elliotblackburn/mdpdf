@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs');
 const url = require('url');
 const fileUrl = require('file-url');
@@ -48,6 +49,8 @@ function processSrc(src, options) {
   }
 
   // We need to convert it
+  console.log(src);
+  console.log(options);
   const resolvedSrc = path.resolve(options.assetDir, src);
   return fileUrl(resolvedSrc);
 }

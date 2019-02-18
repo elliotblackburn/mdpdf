@@ -5,7 +5,7 @@ const mdpdf = require('../');
 const utils = require('./utils');
 
 function clean() {
-  const filesToRemove = ['./README.pdf', './README.html', './output.pdf'];
+  const filesToRemove = ['./README.pdf', './README.html', './output.pdf', './test-img-output.pdf'];
 
   filesToRemove.forEach(file => {
     fs.exists(file, exists => {
@@ -65,6 +65,22 @@ describe('Convert CLI', function() {
 
           pdfExists.should.be.true();
           stdout.should.endWith('output.pdf');
+
+          done();
+        })
+        .catch(done);
+    });
+  });
+
+  context('when given markdown with an image', () => {
+    it('creates a pdf', done => {
+      execa('./bin/index.js', ['./tests/test.md', './test-img-output.pdf'])
+        .then(result => {
+          const stdout = result.stdout;
+          const pdfExists = fs.existsSync('./test-img-output.pdf');
+
+          pdfExists.should.be.true();
+          stdout.should.endWith('test-img-output.pdf');
 
           done();
         })
