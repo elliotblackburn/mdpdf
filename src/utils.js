@@ -49,8 +49,6 @@ function processSrc(src, options) {
   }
 
   // We need to convert it
-  console.log(src);
-  console.log(options);
   const resolvedSrc = path.resolve(options.assetDir, src);
   return fileUrl(resolvedSrc);
 }
