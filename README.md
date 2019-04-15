@@ -100,7 +100,7 @@ mdpdf.convert(options).then((pdfPath) => {
 * `ghStyle` - Boolean value of whether or not to use the GitHub Markdown CSS, *defaults to false*.
 * `defaultStyle` - Boolean value of whether or not to use the additional default styles. These styles provide some things like a basic border and font size. *Defaults to false*.
 * `header` - Full path to a the Handlebars (`.hbs`) file which will be your header. If you set this, you must set the header height (see below).
-* `debug` - When this is set the intermediate HTML will be saved into a file.
+* `debug` - An optional path that can be set to cause the intermediate HTML to be saved to a the desired path.
 * `pdf` (**required**) - An object which contains some sub parameters to control the final PDF document
     * `format` (**required**) - Final document format, allowed values are "A3, A4, A5, Legal, Letter, Tabloid"
     * `orientation` - Final document size orientation, allowed values are "potrait, orientation"
