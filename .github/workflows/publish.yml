@@ -1,0 +1,24 @@
+name: "Publish to npm"
+
+on: push
+
+jobs:
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: filter-tag
+        if: startsWith(github.ref, 'refs/tags')
+      - uses: actions/checkout@v1
+        if: filter-tag
+      - uses: actions/setup-node@v1
+        if: filter-tag
+        with:
+          version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: echo "publishing"
+        if: filter-tag
+      #- run: npm publish
+      #  if: filter-tag
+      #  env:
+      #    NODE_AUTH_TOKEN: ${{secrets.npm_token}}
