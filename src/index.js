@@ -196,10 +196,10 @@ function createPdf(html, options) {
     })
     .then(() => {
       if (options.debug) {
-        fs.createReadStream(tempHtmlPath).pipe(fs.createWriteStream(options.debug));
+        fs.renameSync(tempHtmlPath, options.debug);
+      } else {
+        fs.unlinkSync(tempHtmlPath);
       }
-
-      fs.unlinkSync(tempHtmlPath);
 
       return options.destination;
     });
