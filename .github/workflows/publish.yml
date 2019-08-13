@@ -7,18 +7,17 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: filter-tag
+      - name: checkout
+        uses: actions/checkout@v1
         if: startsWith(github.ref, 'refs/tags')
-      - uses: actions/checkout@v1
-        if: filter-tag
       - uses: actions/setup-node@v1
-        if: filter-tag
+        if: checkout
         with:
           version: 12
           registry-url: https://registry.npmjs.org/
       - run: echo "publishing"
-        if: filter-tag
+        if: checkout
       #- run: npm publish
-      #  if: filter-tag
+      #  if: checkout
       #  env:
       #    NODE_AUTH_TOKEN: ${{secrets.npm_token}}
