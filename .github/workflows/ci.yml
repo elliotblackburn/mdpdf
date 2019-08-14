@@ -1,5 +1,4 @@
-name: Build and test
-
+name: Continous Integration
 on: [push, pull_request]
 
 jobs:
