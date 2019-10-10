@@ -7,11 +7,11 @@ For examples of how to use headers and footers, see the [examples directory](./e
 
 **If you're using the [Atom text editor](https://atom.io/), checkout the [markdown-pdf](https://atom.io/packages/markdown-pdf) plugin which uses mdpdf.**
 
-## Donate
+## Sponsor this project
 
-This project is actively maintained during evenings and weekends, please consider either donating or contributing in other ways.
+This project is actively maintained during evenings and weekends. If you or your company find it useful, please consider supporting the project through [sponsorship](https://github.com/users/BlueHatbRit/sponsorship).
 
-<a href="https://www.buymeacoffee.com/elliot" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Donate" style="height: auto !important;width: auto !important;" ></a>
+## Contributions
 
 If you wish to report bugs or contribute fixes and features, please see the [contributors guide](./CONTRIBUTING.md)
 
