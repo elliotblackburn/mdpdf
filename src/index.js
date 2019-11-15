@@ -175,7 +175,7 @@ function createPdf(html, options) {
 
   return writeFile(tempHtmlPath, html)
     .then(() => {
-      return puppeteer.launch({ headless: true });
+      return puppeteer.launch({ headless: true , args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     })
     .then(newBrowser => {
       browser = newBrowser;
