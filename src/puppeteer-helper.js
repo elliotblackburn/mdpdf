@@ -12,7 +12,7 @@ function getOptions(options) {
     margin.left = options.pdf.border.left || undefined;
   }
 
-  return {
+  let pupOptions = {
     path: options.destination,
     displayHeaderFooter: false,
     printBackground: true,
@@ -21,7 +21,12 @@ function getOptions(options) {
     displayHeaderFooter,
     headerTemplate: options.header || '',
     footerTemplate: options.footer || '',
-  };
+  }
+
+  if(options.pdf.orientation=='landscape')
+    pupOptions['landscape'] = true;
+
+  return pupOptions;
 }
 
 module.exports = {
