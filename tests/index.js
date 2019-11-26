@@ -10,7 +10,11 @@ function clean() {
   filesToRemove.forEach(file => {
     fs.exists(file, exists => {
       if (exists) {
-        fs.unlinkSync(file);
+        try {
+          fs.unlinkSync(file);
+        } catch (err) {
+          console.error('Failed to unlink file', file, err);
+        }
       }
     });
   });
