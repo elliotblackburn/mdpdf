@@ -1,0 +1,5 @@
+/* CSS to test --style and --gh-style flag */
+
+.underlinedTestingStuff {
+    text-decoration: underline;
+}
