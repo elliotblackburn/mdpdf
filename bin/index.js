@@ -30,6 +30,7 @@ const cli = meow(
         --border-left=<size>         Left border (default: 20mm)
         --border-bottom=<size>       Bottom border (default: 20mm)
         --border-right=<size>        Right border (default: 20mm)
+        --gh-style                   Enable default gh-styles, when --style is used
         --no-emoji                   Disables emoji conversions
         --debug                      Save the generated html for debugging
         --help                       Display this menu
@@ -89,6 +90,7 @@ const borderBottom = cli.flags.borderBottom || border;
 const borderRight = cli.flags.borderRight || border;
 const pdfFormat = cli.flags.format || 'A4';
 const pdfOrientation = cli.flags.orientation || 'portrait';
+const ghStyleFlag = cli.flags.ghStyle || false;
 
 // Name of the environement variable
 const envStyleName = 'MDPDF_STYLES';
@@ -103,7 +105,7 @@ if (!style && process.env[envStyleName]) {
 }
 
 const options = {
-  ghStyle: !style,
+  ghStyle: style ? ghStyleFlag : true,
   defaultStyle: true,
   source: path.resolve(source),
   destination: path.resolve(destination),
