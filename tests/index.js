@@ -91,6 +91,34 @@ describe('Convert CLI', function() {
         .catch(done);
     });
   });
+
+  context('When custom style is passed', () => {
+    it('HTML file contains the custom style', done => {
+      execa('./bin/index.js', ['./tests/test.md', '--style=./tests/test.css', '--debug'])
+        .then(() => {
+          const htmlContent = fs.readFileSync('./tests/test.html');
+          const cssContent = fs.readFileSync('./tests/test.css');
+          const ghStyleContent = fs.readFileSync('./src/assets/github-markdown-css.css');
+
+          htmlContent.includes(cssContent).should.be.true();
+          htmlContent.includes(ghStyleContent).should.be.false();
+          done();
+        });
+    });
+
+    it('HTML file contains the default styles when --gh-style is passed', done => {
+      execa('./bin/index.js', ['./tests/test.md', '--style=./tests/test.css', '--debug', '--gh-style'])
+        .then(() => {
+          const htmlContent = fs.readFileSync('./tests/test.html');
+          const cssContent = fs.readFileSync('./tests/test.css');
+          const ghStyleContent = fs.readFileSync('./src/assets/github-markdown-css.css');
+
+          htmlContent.includes(cssContent).should.be.true();
+          htmlContent.includes(ghStyleContent).should.be.true();
+          done();
+        });
+    });
+  });
 });
 
 describe('Convert API', function() {

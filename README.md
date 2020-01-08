@@ -42,6 +42,7 @@ Install locally to access the API.
 * `--border-left=<size>`        - Left border (default: 20mm)
 * `--border-bottom=<size>`      - Bottom border (default: 20mm)
 * `--border-right=<size>`       - Right border (default: 20mm)
+* `--gh-style`                  - Enable default gh-styles, when --style is used
 * `--no-emoji`                  - Disables emoji conversions
 * `--debug`                     - Save the generated html for debugging
 * `--help`                      - Display this menu
