@@ -1,4 +1,5 @@
 # MDPDF - Markdown to PDF converter
+
 [![NPM version](https://img.shields.io/npm/v/mdpdf.svg?style=flat-square)](https://www.npmjs.com/package/mdpdf) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 A command line markdown to pdf converter with support for page headers, footers, and custom stylesheets. Mdpdf is incredibly configurable and has a JavaScript API for more extravogant usage.
@@ -27,28 +28,28 @@ Install locally to access the API.
 
 ## Example usage
 
-* `mdpdf README.md` - Simple convert using GitHub Markdown CSS and some additional basic stylings.
-* `mdpdf README.md --style styles.css --header header.hbs --hHeight 22` - Convert with custom styling with a header of height 22mm.
+- `mdpdf README.md` - Simple convert using GitHub Markdown CSS and some additional basic stylings.
+- `mdpdf README.md --style styles.css --header header.hbs --hHeight 22` - Convert with custom styling with a header of height 22mm.
 
 ## Options
 
-* `--style=<filename>`          - A single css stylesheet you wish to apply to the PDF
-* `--header=<filename>`         - A HTML (.html) file to inject into the header of the PDF
-* `--h-height=<height>`         - The height of the header section
-* `--footer=<filename>`         - A HTML (.html) file to inject into the footer of the PDF
-* `--f-height=<height>`         - The height of the footer section
-* `--border=<size>`             - Border (top, left, bottom, right; default: 20mm)
-* `--border-top=<size>`         - Top border (default: 20mm)
-* `--border-left=<size>`        - Left border (default: 20mm)
-* `--border-bottom=<size>`      - Bottom border (default: 20mm)
-* `--border-right=<size>`       - Right border (default: 20mm)
-* `--gh-style`                  - Enable default gh-styles, when --style is used
-* `--no-emoji`                  - Disables emoji conversions
-* `--debug`                     - Save the generated html for debugging
-* `--help`                      - Display this menu
-* `--version`                   - Display the application version
-* `--format=<format>`           - PDF size format: A3, A4, A5, Legal, Letter, Tabloid (Default: A4)
-* `--orientation=<orientation>` - PDF orientation: portrait or landscape (Default: portrait)
+- `--style=<filename>` - A single css stylesheet you wish to apply to the PDF
+- `--header=<filename>` - A HTML (.html) file to inject into the header of the PDF
+- `--h-height=<height>` - The height of the header section
+- `--footer=<filename>` - A HTML (.html) file to inject into the footer of the PDF
+- `--f-height=<height>` - The height of the footer section
+- `--border=<size>` - Border (top, left, bottom, right; default: 20mm)
+- `--border-top=<size>` - Top border (default: 20mm)
+- `--border-left=<size>` - Left border (default: 20mm)
+- `--border-bottom=<size>` - Bottom border (default: 20mm)
+- `--border-right=<size>` - Right border (default: 20mm)
+- `--gh-style` - Enable default gh-styles, when --style is used
+- `--no-emoji` - Disables emoji conversions
+- `--debug` - Save the generated html for debugging
+- `--help` - Display this menu
+- `--version` - Display the application version
+- `--format=<format>` - PDF size format: A3, A4, A5, Legal, Letter, Tabloid (Default: A4)
+- `--orientation=<orientation>` - PDF orientation: portrait or landscape (Default: portrait)
 
 Length parameters (`<height>` and `<size>`) require a unit. Valid units are `mm`, `cm`, `in` and `px`.
 
@@ -60,7 +61,7 @@ Mdpdf is powered by Puppeteer, the headless Chrome browser project by Google. [P
 
 ## Environment variables
 
-* `MDPDF_STYLES` - The full path to a stylesheet you wish to use if `--style` is not specified when calling `mdpdf` from the command line.
+- `MDPDF_STYLES` - The full path to a stylesheet you wish to use if `--style` is not specified when calling `mdpdf` from the command line.
 
 ## Emoji support
 
@@ -95,16 +96,16 @@ mdpdf.convert(options).then((pdfPath) => {
 
 ### Options
 
-* `source` (**required**) - Full path to the source markdown file.
-* `destination` (**required**) - Full path to the destination (pdf) file.
-* `styles` - Full path to a single css stylesheet which is applied last to the PDF.
-* `ghStyle` - Boolean value of whether or not to use the GitHub Markdown CSS, *defaults to false*.
-* `defaultStyle` - Boolean value of whether or not to use the additional default styles. These styles provide some things like a basic border and font size. *Defaults to false*.
-* `header` - Full path to a the Handlebars (`.hbs`) file which will be your header. If you set this, you must set the header height (see below).
-* `debug` - An optional path that can be set to cause the intermediate HTML to be saved to a the desired path.
-* `pdf` (**required**) - An object which contains some sub parameters to control the final PDF document
-    * `format` (**required**) - Final document format, allowed values are "A3, A4, A5, Legal, Letter, Tabloid"
-    * `orientation` - Final document size orientation, allowed values are "potrait, orientation"
-    * `header` - A sub object which contains some header settings
-        * `height` - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
-    * `border` - The document borders
+- `source` (**required**) - Full path to the source markdown file.
+- `destination` (**required**) - Full path to the destination (pdf) file.
+- `styles` - Full path to a single css stylesheet which is applied last to the PDF.
+- `ghStyle` - Boolean value of whether or not to use the GitHub Markdown CSS, _defaults to false_.
+- `defaultStyle` - Boolean value of whether or not to use the additional default styles. These styles provide some things like a basic border and font size. _Defaults to false_.
+- `header` - Full path to a the Handlebars (`.hbs`) file which will be your header. If you set this, you must set the header height (see below).
+- `debug` - An optional path that can be set to cause the intermediate HTML to be saved to a the desired path.
+- `pdf` (**required**) - An object which contains some sub parameters to control the final PDF document
+  - `format` (**required**) - Final document format, allowed values are "A3, A4, A5, Legal, Letter, Tabloid"
+  - `orientation` - Final document size orientation, allowed values are "potrait, orientation"
+  - `header` - A sub object which contains some header settings
+    - `height` - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
+  - `border` - The document borders

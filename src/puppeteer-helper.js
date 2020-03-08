@@ -21,8 +21,9 @@ function getOptions(options) {
     displayHeaderFooter,
     headerTemplate: options.header || '',
     footerTemplate: options.footer || '',
-    landscape: (options.pdf.orientation && options.pdf.orientation == 'landscape')
-  }
+    landscape:
+      options.pdf.orientation && options.pdf.orientation == 'landscape',
+  };
 }
 
 module.exports = {

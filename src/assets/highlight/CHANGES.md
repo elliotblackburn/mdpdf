@@ -2,20 +2,19 @@
 
 New languages
 
-- *LLVM* by [Michael Rodler][]
+- _LLVM_ by [Michael Rodler][]
 
 Improvements:
 
-- *TypeScript* updated with annotations and param lists inside constructors, by
+- _TypeScript_ updated with annotations and param lists inside constructors, by
   [Raphael Parree][].
-- *CoffeeScript* updated with new keywords and fixed to recognize JavaScript
+- _CoffeeScript_ updated with new keywords and fixed to recognize JavaScript
   in \`\`\`, thanks to thanks to [Geoffrey Booth][].
-- Compiler directives in *Delphi* are now correctly highlighted as "meta".
+- Compiler directives in _Delphi_ are now correctly highlighted as "meta".
 
-[Raphael Parree]: https://github.com/rparree
-[Michael Rodler]: https://github.com/f0rki
-[Geoffrey Booth]: https://github.com/GeoffreyBooth
-
+[raphael parree]: https://github.com/rparree
+[michael rodler]: https://github.com/f0rki
+[geoffrey booth]: https://github.com/GeoffreyBooth
 
 ## Version 9.8.0 "New York"
 
@@ -25,24 +24,23 @@ West Coast.
 
 New languages:
 
-- *Clean* by [Camil Staps][]
-- *Flix* by [Magnus Madsen][]
+- _Clean_ by [Camil Staps][]
+- _Flix_ by [Magnus Madsen][]
 
 Improvements:
 
-- [Kenton Hamaluik][] did a comprehensive update for *Haxe*.
-- New commands for *PowerShell* from [Nicolas Le Gall][].
-- [Jan T. Sott][] updated *NSIS*.
-- *Java* and *Swift* support unicode characters in identifiers thanks to
+- [Kenton Hamaluik][] did a comprehensive update for _Haxe_.
+- New commands for _PowerShell_ from [Nicolas Le Gall][].
+- [Jan T. Sott][] updated _NSIS_.
+- _Java_ and _Swift_ support unicode characters in identifiers thanks to
   [Alexander Lichter][].
 
-[Camil Staps]: https://github.com/camilstaps
-[Magnus Madsen]: https://github.com/magnus-madsen
-[Kenton Hamaluik]: https://github.com/FuzzyWuzzie
-[Nicolas Le Gall]: https://github.com/darkitty
-[Jan T. Sott]: https://github.com/idleberg
-[Alexander Lichter]: https://github.com/manniL
-
+[camil staps]: https://github.com/camilstaps
+[magnus madsen]: https://github.com/magnus-madsen
+[kenton hamaluik]: https://github.com/FuzzyWuzzie
+[nicolas le gall]: https://github.com/darkitty
+[jan t. sott]: https://github.com/idleberg
+[alexander lichter]: https://github.com/manniL
 
 ## Version 9.7.0
 
@@ -61,41 +59,39 @@ highlight.js: even boring things keep getting better (even if slow).
   generics `<...>`.
 - Fixed another slow regex in Less.
 
-
 ## Version 9.6.0
 
 New languages:
 
-- *ABNF* and *EBNF* by [Alex McKibben][]
-- *Awk* by [Matthew Daly][]
-- *SubUnit* by [Sergey Bronnikov][]
+- _ABNF_ and _EBNF_ by [Alex McKibben][]
+- _Awk_ by [Matthew Daly][]
+- _SubUnit_ by [Sergey Bronnikov][]
 
 New styles:
 
-- *Atom One* in both Dark and Light variants  by [Daniel Gamage][]
+- _Atom One_ in both Dark and Light variants by [Daniel Gamage][]
 
-Plus, a few smaller updates for *Lasso*, *Elixir*, *C++* and *SQL*.
+Plus, a few smaller updates for _Lasso_, _Elixir_, _C++_ and _SQL_.
 
-[Alex McKibben]: https://github.com/mckibbenta
-[Daniel Gamage]: https://github.com/danielgamage
-[Matthew Daly]: https://github.com/matthewbdaly
-[Sergey Bronnikov]: https://github.com/ligurio
-
+[alex mckibben]: https://github.com/mckibbenta
+[daniel gamage]: https://github.com/danielgamage
+[matthew daly]: https://github.com/matthewbdaly
+[sergey bronnikov]: https://github.com/ligurio
 
 ## Version 9.5.0
 
 New languages:
 
-- *Excel* by [Victor Zhou][]
-- *Linden Scripting Language* by [Builder's Brewery][]
-- *TAP* (Test Anything Protocol) by [Sergey Bronnikov][]
-- *Pony* by [Joe Eli McIlvain][]
-- *Coq* by [Stephan Boyer][]
-- *dsconfig* and *LDIF* by [Jacob Childress][]
+- _Excel_ by [Victor Zhou][]
+- _Linden Scripting Language_ by [Builder's Brewery][]
+- _TAP_ (Test Anything Protocol) by [Sergey Bronnikov][]
+- _Pony_ by [Joe Eli McIlvain][]
+- _Coq_ by [Stephan Boyer][]
+- _dsconfig_ and _LDIF_ by [Jacob Childress][]
 
 New styles:
 
-- *Ocean Dark* by [Gavin Siu][]
+- _Ocean Dark_ by [Gavin Siu][]
 
 Notable changes:
 
@@ -104,28 +100,27 @@ Notable changes:
   comments.
 - [Victor Zhou][] added support for digit separators in C++ numbers.
 
-[Gavin Siu]: https://github.com/gavsiu
-[Builder's Brewery]: https://github.com/buildersbrewery
-[Victor Zhou]: https://github.com/OiCMudkips
-[Sergey Bronnikov]: https://github.com/ligurio
-[Joe Eli McIlvain]: https://github.com/jemc
-[Stephan Boyer]: https://github.com/boyers
-[Jacob Childress]: https://github.com/braveulysses
-[Minh Nguyễn]: https://github.com/1ec5
-[Jeremy Hull]: https://github.com/sourrust
-
+[gavin siu]: https://github.com/gavsiu
+[builder's brewery]: https://github.com/buildersbrewery
+[victor zhou]: https://github.com/OiCMudkips
+[sergey bronnikov]: https://github.com/ligurio
+[joe eli mcilvain]: https://github.com/jemc
+[stephan boyer]: https://github.com/boyers
+[jacob childress]: https://github.com/braveulysses
+[minh nguyễn]: https://github.com/1ec5
+[jeremy hull]: https://github.com/sourrust
 
 ## Version 9.4.0
 
 New languages:
 
-- *PureBASIC* by [Tristano Ajmone][]
-- *BNF* by [Oleg Efimov][]
-- *Ada* by [Lars Schulna][]
+- _PureBASIC_ by [Tristano Ajmone][]
+- _BNF_ by [Oleg Efimov][]
+- _Ada_ by [Lars Schulna][]
 
 New styles:
 
-- *PureBASIC* by [Tristano Ajmone][]
+- _PureBASIC_ by [Tristano Ajmone][]
 
 Improvements to existing languages and styles:
 
@@ -141,25 +136,24 @@ Improvements to existing languages and styles:
 - `usize` and `isize` are now highlighted in Rust.
 - Fixed labels and directives in x86 assembler.
 
-[Tristano Ajmone]: https://github.com/tajmone
-[Taisuke Fujimoto]: https://github.com/temp-impl
-[Oleg Efimov]: https://github.com/Sannis
-[Boone Severson]: https://github.com/BooneJS
-[Victor Zhou]: https://github.com/OiCMudkips
-[Lars Schulna]: https://github.com/captain-hanuta
-[Janis Voigtländer]: https://github.com/jvoigtlaender
-
+[tristano ajmone]: https://github.com/tajmone
+[taisuke fujimoto]: https://github.com/temp-impl
+[oleg efimov]: https://github.com/Sannis
+[boone severson]: https://github.com/BooneJS
+[victor zhou]: https://github.com/OiCMudkips
+[lars schulna]: https://github.com/captain-hanuta
+[janis voigtländer]: https://github.com/jvoigtlaender
 
 ## Version 9.3.0
 
 New languages:
 
-- *Tagger Script* by [Philipp Wolfer][]
-- *MoonScript* by [Billy Quith][]
+- _Tagger Script_ by [Philipp Wolfer][]
+- _MoonScript_ by [Billy Quith][]
 
 New styles:
 
-- *xt256* by [Herbert Shin][]
+- _xt256_ by [Herbert Shin][]
 
 Improvements to existing languages and styles:
 
@@ -174,24 +168,23 @@ Improvements to existing languages and styles:
 - Markdown now recognizes \`\`\`-fenced code blocks
 - Improved detection of function declarations in C++ and C#
 
-[Philipp Wolfer]: https://github.com/phw
-[Billy Quith]: https://github.com/billyquith
-[Herbert Shin]: https://github.com/initbar
-
+[philipp wolfer]: https://github.com/phw
+[billy quith]: https://github.com/billyquith
+[herbert shin]: https://github.com/initbar
 
 ## Version 9.2.0
 
 New languages:
 
-- *QML* by [John Foster][]
-- *HTMLBars* by [Michael Johnston][]
-- *CSP* by [Taras][]
-- *Maxima* by [Robert Dodier][]
+- _QML_ by [John Foster][]
+- _HTMLBars_ by [Michael Johnston][]
+- _CSP_ by [Taras][]
+- _Maxima_ by [Robert Dodier][]
 
 New styles:
 
-- *Gruvbox* by [Qeole][]
-- *Dracula* by [Denis Ciccale][]
+- _Gruvbox_ by [Qeole][]
+- _Dracula_ by [Denis Ciccale][]
 
 Improvements to existing languages and styles:
 
@@ -205,27 +198,26 @@ Improvements to existing languages and styles:
 - We now use anonymous modules for AMD.
 - `macro_rules!` is now recognized as a built-in in Rust.
 
-[John Foster]: https://github.com/jf990
-[Qeole]: https://github.com/Qeole
-[Denis Ciccale]: https://github.com/dciccale
-[Michael Johnston]: https://github.com/lastobelus
-[Taras]: https://github.com/oxdef
-[Robert Dodier]: https://github.com/robert-dodier
-
+[john foster]: https://github.com/jf990
+[qeole]: https://github.com/Qeole
+[denis ciccale]: https://github.com/dciccale
+[michael johnston]: https://github.com/lastobelus
+[taras]: https://github.com/oxdef
+[robert dodier]: https://github.com/robert-dodier
 
 ## Version 9.1.0
 
 New languages:
 
-- *Stan* by [Brendan Rocks][]
-- *BASIC* by [Raphaël Assénat][]
-- *GAUSS* by [Matt Evans][]
-- *DTS* by [Martin Braun][]
-- *Arduino* by [Stefania Mellai][]
+- _Stan_ by [Brendan Rocks][]
+- _BASIC_ by [Raphaël Assénat][]
+- _GAUSS_ by [Matt Evans][]
+- _DTS_ by [Martin Braun][]
+- _Arduino_ by [Stefania Mellai][]
 
 New Styles:
 
-- *Arduino Light* by [Stefania Mellai][]
+- _Arduino Light_ by [Stefania Mellai][]
 
 Improvements to existing languages and styles:
 
@@ -236,12 +228,11 @@ Improvements to existing languages and styles:
 - Recognize b-prefixed chars and strings in Rust
 - Better numbers handling in Verilog
 
-[Brendan Rocks]: http://brendanrocks.com
-[Raphaël Assénat]: https://github.com/raphnet
-[Matt Evans]: https://github.com/matthewevans
-[Martin Braun]: https://github.com/mbr0wn
-[Stefania Mellai]: https://github.com/smellai
-
+[brendan rocks]: http://brendanrocks.com
+[raphaël assénat]: https://github.com/raphnet
+[matt evans]: https://github.com/matthewevans
+[martin braun]: https://github.com/mbr0wn
+[stefania mellai]: https://github.com/smellai
 
 ## Version 9.0.0
 
@@ -262,10 +253,10 @@ some more in next releases. Please do give your feedback in our
 
 New languages in this release:
 
-- *Caché Object Script* by [Nikita Savchenko][]
-- *YAML* by [Stefan Wienert][]
-- *MIPS Assembler* by [Nebuleon Fumika][]
-- *HSP* by [prince][]
+- _Caché Object Script_ by [Nikita Savchenko][]
+- _YAML_ by [Stefan Wienert][]
+- _MIPS Assembler_ by [Nebuleon Fumika][]
+- _HSP_ by [prince][]
 
 Improvements to existing languages and styles:
 
@@ -284,18 +275,17 @@ Other notable changes:
   shamelessly uses ES6 features all over the place, courtesy of [Jeremy Hull][].
 - License added to non-compressed browser build.
 
-[Jan Kühle]: https://github.com/frigus02
-[Stefan Wienert]: https://github.com/zealot128
-[Kenta Sato]: https://github.com/bicycle1885
-[Nikita Savchenko]: https://github.com/ZitRos
+[jan kühle]: https://github.com/frigus02
+[stefan wienert]: https://github.com/zealot128
+[kenta sato]: https://github.com/bicycle1885
+[nikita savchenko]: https://github.com/ZitRos
 [webworkers]: https://github.com/isagalaev/highlight.js#web-workers
-[Jeremy Hull]: https://github.com/sourrust
+[jeremy hull]: https://github.com/sourrust
 [#348]: https://github.com/isagalaev/highlight.js/issues/348
 [sg]: http://highlightjs.readthedocs.org/en/latest/style-guide.html
 [issues]: https://github.com/isagalaev/highlight.js/issues
-[Nebuleon Fumika]: https://github.com/Nebuleon
+[nebuleon fumika]: https://github.com/Nebuleon
 [prince]: https://github.com/prince-0203
-
 
 ## Version 8.9.1
 
@@ -307,16 +297,15 @@ Some last-minute changes reverted due to strange bug with minified browser build
 - Template string support for Typescript, as for ECMAScript 6
 - License added to not minified browser build
 
-
 ## Version 8.9.0
 
 New languages:
 
-- *crmsh* by [Kristoffer Gronlund][]
-- *SQF* by [Soren Enevoldsen][]
+- _crmsh_ by [Kristoffer Gronlund][]
+- _SQF_ by [Soren Enevoldsen][]
 
-[Kristoffer Gronlund]: https://github.com/krig
-[Soren Enevoldsen]: https://github.com/senevoldsen90
+[kristoffer gronlund]: https://github.com/krig
+[soren enevoldsen]: https://github.com/senevoldsen90
 
 Notable fixes and improvements to existing languages:
 
@@ -334,23 +323,22 @@ Other notable changes:
 
 - ~~License added to not minified browser build~~
 
-[Kristoffer Gronlund]: https://github.com/krig
-[Søren Enevoldsen]: https://github.com/senevoldsen90
-[Daniel Rosenwasser]: https://github.com/DanielRosenwasser
-[Ladislav Prskavec]: https://github.com/abtris
-[Tsuyusato Kitsune]: https://github.com/MakeNowJust
-[Nate Cook]: https://github.com/natecook1000
-
+[kristoffer gronlund]: https://github.com/krig
+[søren enevoldsen]: https://github.com/senevoldsen90
+[daniel rosenwasser]: https://github.com/DanielRosenwasser
+[ladislav prskavec]: https://github.com/abtris
+[tsuyusato kitsune]: https://github.com/MakeNowJust
+[nate cook]: https://github.com/natecook1000
 
 ## Version 8.8.0
 
 New languages:
 
-- *Golo* by [Philippe Charrière][]
-- *GAMS* by [Stefan Bechert][]
-- *IRPF90* by [Anthony Scemama][]
-- *Access logs* by [Oleg Efimov][]
-- *Crystal* by [Tsuyusato Kitsune][]
+- _Golo_ by [Philippe Charrière][]
+- _GAMS_ by [Stefan Bechert][]
+- _IRPF90_ by [Anthony Scemama][]
+- _Access logs_ by [Oleg Efimov][]
+- _Crystal_ by [Tsuyusato Kitsune][]
 
 Notable fixes and improvements to existing languages:
 
@@ -364,28 +352,27 @@ Other notable changes:
 - Change versions to X.Y.Z SemVer-compatible format
 - Added ability to build all targets at once
 
-[Philippe Charrière]: https://github.com/k33g
-[Stefan Bechert]: https://github.com/b-pos465
-[Anthony Scemama]: https://github.com/scemama
-[Oleg Efimov]: https://github.com/Sannis
-[Tsuyusato Kitsune]: https://github.com/MakeNowJust
-
+[philippe charrière]: https://github.com/k33g
+[stefan bechert]: https://github.com/b-pos465
+[anthony scemama]: https://github.com/scemama
+[oleg efimov]: https://github.com/Sannis
+[tsuyusato kitsune]: https://github.com/MakeNowJust
 
 ## Version 8.7
 
 New languages:
 
-- *Zephir* by [Oleg Efimov][]
-- *Elm* by [Janis Voigtländer][]
-- *XQuery* by [Dirk Kirsten][]
-- *Mojolicious* by [Dotan Dimet][]
-- *AutoIt* by Manh Tuan from [J2TeaM][]
-- *Toml* (ini extension) by [Guillaume Gomez][]
+- _Zephir_ by [Oleg Efimov][]
+- _Elm_ by [Janis Voigtländer][]
+- _XQuery_ by [Dirk Kirsten][]
+- _Mojolicious_ by [Dotan Dimet][]
+- _AutoIt_ by Manh Tuan from [J2TeaM][]
+- _Toml_ (ini extension) by [Guillaume Gomez][]
 
 New styles:
 
-- *Hopscotch* by [Jan T. Sott][]
-- *Grayscale* by [MY Sun][]
+- _Hopscotch_ by [Jan T. Sott][]
+- _Grayscale_ by [MY Sun][]
 
 Notable fixes and improvements to existing languages:
 
@@ -401,35 +388,34 @@ Notable fixes and improvements to existing languages:
 - Correctly highlight numbers and strings inside of C/C++ macros
 - C/C++ functions now support pointer, reference, and move returns
 
-[Oleg Efimov]: https://github.com/Sannis
-[Guillaume Gomez]: https://github.com/GuillaumeGomez
-[Janis Voigtländer]: https://github.com/jvoigtlaender
-[Jan T. Sott]: https://github.com/idleberg
-[Dirk Kirsten]: https://github.com/dirkk
-[MY Sun]: https://github.com/simonmysun
-[Vadimtro]: https://github.com/Vadimtro
-[Benjamin Auder]: https://github.com/ghost
-[Dotan Dimet]: https://github.com/dotandimet
-[J2TeaM]: https://github.com/J2TeaM
-
+[oleg efimov]: https://github.com/Sannis
+[guillaume gomez]: https://github.com/GuillaumeGomez
+[janis voigtländer]: https://github.com/jvoigtlaender
+[jan t. sott]: https://github.com/idleberg
+[dirk kirsten]: https://github.com/dirkk
+[my sun]: https://github.com/simonmysun
+[vadimtro]: https://github.com/Vadimtro
+[benjamin auder]: https://github.com/ghost
+[dotan dimet]: https://github.com/dotandimet
+[j2team]: https://github.com/J2TeaM
 
 ## Version 8.6
 
 New languages:
 
-- *C/AL* by [Kenneth Fuglsang][]
-- *DNS zone file* by [Tim Schumacher][]
-- *Ceylon* by [Lucas Werkmeister][]
-- *OpenSCAD* by [Dan Panzarella][]
-- *Inform7* by [Bruno Dias][]
-- *armasm* by [Dan Panzarella][]
-- *TP* by [Jay Strybis][]
+- _C/AL_ by [Kenneth Fuglsang][]
+- _DNS zone file_ by [Tim Schumacher][]
+- _Ceylon_ by [Lucas Werkmeister][]
+- _OpenSCAD_ by [Dan Panzarella][]
+- _Inform7_ by [Bruno Dias][]
+- _armasm_ by [Dan Panzarella][]
+- _TP_ by [Jay Strybis][]
 
 New styles:
 
-- *Atelier Cave*, *Atelier Estuary*,
-  *Atelier Plateau* and *Atelier Savanna* by [Bram de Haan][]
-- *Github Gist* by [Louis Barranqueiro][]
+- _Atelier Cave_, _Atelier Estuary_,
+  _Atelier Plateau_ and _Atelier Savanna_ by [Bram de Haan][]
+- _Github Gist_ by [Louis Barranqueiro][]
 
 Notable fixes and improvements to existing languages:
 
@@ -442,57 +428,55 @@ Notable fixes and improvements to existing languages:
 - Images is now included to CDN build
 - Release process is now automated
 
-[Bram de Haan]: https://github.com/atelierbram
-[Kenneth Fuglsang]: https://github.com/kfuglsang
-[Louis Barranqueiro]: https://github.com/LouisBarranqueiro
-[Tim Schumacher]: https://github.com/enko
-[Lucas Werkmeister]: https://github.com/lucaswerkmeister
-[Dan Panzarella]: https://github.com/pzl
-[Bruno Dias]: https://github.com/sequitur
-[Jay Strybis]: https://github.com/unreal
-
+[bram de haan]: https://github.com/atelierbram
+[kenneth fuglsang]: https://github.com/kfuglsang
+[louis barranqueiro]: https://github.com/LouisBarranqueiro
+[tim schumacher]: https://github.com/enko
+[lucas werkmeister]: https://github.com/lucaswerkmeister
+[dan panzarella]: https://github.com/pzl
+[bruno dias]: https://github.com/sequitur
+[jay strybis]: https://github.com/unreal
 
 ## Version 8.5
 
 New languages:
 
-- *pf.conf* by [Peter Piwowarski][]
-- *Julia* by [Kenta Sato][]
-- *Prolog* by [Raivo Laanemets][]
-- *Docker* by [Alexis Hénaut][]
-- *Fortran* by [Anthony Scemama][] and [Thomas Applencourt][]
-- *Kotlin* by [Sergey Mashkov][]
+- _pf.conf_ by [Peter Piwowarski][]
+- _Julia_ by [Kenta Sato][]
+- _Prolog_ by [Raivo Laanemets][]
+- _Docker_ by [Alexis Hénaut][]
+- _Fortran_ by [Anthony Scemama][] and [Thomas Applencourt][]
+- _Kotlin_ by [Sergey Mashkov][]
 
 New styles:
 
-- *Agate* by [Taufik Nurrohman][]
-- *Darcula* by [JetBrains][]
-- *Atelier Sulphurpool* by [Bram de Haan][]
-- *Android Studio* by [Pedro Oliveira][]
+- _Agate_ by [Taufik Nurrohman][]
+- _Darcula_ by [JetBrains][]
+- _Atelier Sulphurpool_ by [Bram de Haan][]
+- _Android Studio_ by [Pedro Oliveira][]
 
 Notable fixes and improvements to existing languages:
 
 - ES6 features in JavaScript are better supported now by [Gu Yiling][].
 - Swift now recognizes body-less method definitions.
-- Single expression functions `def foo, do: ... ` now work in Elixir.
+- Single expression functions `def foo, do: ...` now work in Elixir.
 - More uniform detection of built-in classes in Objective C.
 - Fixes for number literals and processor directives in Rust.
 - HTML `<script>` tag now allows any language, not just JavaScript.
 - Multi-line comments are supported now in MatLab.
 
-[Taufik Nurrohman]: https://github.com/tovic
-[Jet Brains]: https://www.jetbrains.com/
-[Peter Piwowarski]: https://github.com/oldlaptop
-[Kenta Sato]: https://github.com/bicycle1885
-[Bram de Haan]: https://github.com/atelierbram
-[Raivo Laanemets]: https://github.com/rla
-[Alexis Hénaut]: https://github.com/AlexisNo
-[Anthony Scemama]: https://github.com/scemama
-[Pedro Oliveira]: https://github.com/kanytu
-[Gu Yiling]: https://github.com/Justineo
-[Sergey Mashkov]: https://github.com/cy6erGn0m
-[Thomas Applencourt]: https://github.com/TApplencourt
-
+[taufik nurrohman]: https://github.com/tovic
+[jet brains]: https://www.jetbrains.com/
+[peter piwowarski]: https://github.com/oldlaptop
+[kenta sato]: https://github.com/bicycle1885
+[bram de haan]: https://github.com/atelierbram
+[raivo laanemets]: https://github.com/rla
+[alexis hénaut]: https://github.com/AlexisNo
+[anthony scemama]: https://github.com/scemama
+[pedro oliveira]: https://github.com/kanytu
+[gu yiling]: https://github.com/Justineo
+[sergey mashkov]: https://github.com/cy6erGn0m
+[thomas applencourt]: https://github.com/TApplencourt
 
 ## Version 8.4
 
@@ -517,26 +501,25 @@ Other notable changes:
 
 New languages:
 
-- *AspectJ* by [Hakan Özler][]
-- *STEP Part 21* by [Adam Joseph Cook][]
-- *SML* derived by [Edwin Dalorzo][] from OCaml definition
-- *Mercury* by [mucaho][]
-- *Smali* by [Dennis Titze][]
-- *Verilog* by [Jon Evans][]
-- *Stata* by [Brian Quistorff][]
+- _AspectJ_ by [Hakan Özler][]
+- _STEP Part 21_ by [Adam Joseph Cook][]
+- _SML_ derived by [Edwin Dalorzo][] from OCaml definition
+- _Mercury_ by [mucaho][]
+- _Smali_ by [Dennis Titze][]
+- _Verilog_ by [Jon Evans][]
+- _Stata_ by [Brian Quistorff][]
 
-[Hakan Özler]: https://github.com/ozlerhakan
-[Adam Joseph Cook]: https://github.com/adamjcook
+[hakan özler]: https://github.com/ozlerhakan
+[adam joseph cook]: https://github.com/adamjcook
 [demo page]: https://highlightjs.org/static/demo/
-[Ivan Sagalaev]: https://github.com/isagalaev
-[Edwin Dalorzo]: https://github.com/edalorzo
+[ivan sagalaev]: https://github.com/isagalaev
+[edwin dalorzo]: https://github.com/edalorzo
 [mucaho]: https://github.com/mucaho
-[Dennis Titze]: https://github.com/titze
-[Jon Evans]: https://github.com/craftyjon
-[Brian Quistorff]: https://github.com/bquistorff
+[dennis titze]: https://github.com/titze
+[jon evans]: https://github.com/craftyjon
+[brian quistorff]: https://github.com/bquistorff
 [ocaml]: https://github.com/isagalaev/highlight.js/pull/608#issue-46190207
-[Mickaël Delahaye]: https://github.com/polazarus
-
+[mickaël delahaye]: https://github.com/polazarus
 
 ## Version 8.3
 
@@ -557,35 +540,34 @@ Some notable fixes:
 
 New languages in this release:
 
-- *Less* by [Max Mikhailov][]
-- *Stylus* by [Bryant Williams][]
-- *Tcl* by [Radek Liska][]
-- *Puppet* by [Jose Molina Colmenero][]
-- *Processing* by [Erik Paluka][]
-- *Twig* templates by [Luke Holder][]
-- *PowerShell* by [David Mohundro][], based on [the work of Nicholas Blumhardt][ps]
-- *XL* by [Christophe de Dinechin][]
-- *LiveScript* by [Taneli Vatanen][] and [Jen Evers-Corvina][]
-- *ERB* (Ruby in HTML) by [Lucas Mazza][]
-- *Roboconf* by [Vincent Zurczak][]
+- _Less_ by [Max Mikhailov][]
+- _Stylus_ by [Bryant Williams][]
+- _Tcl_ by [Radek Liska][]
+- _Puppet_ by [Jose Molina Colmenero][]
+- _Processing_ by [Erik Paluka][]
+- _Twig_ templates by [Luke Holder][]
+- _PowerShell_ by [David Mohundro][], based on [the work of Nicholas Blumhardt][ps]
+- _XL_ by [Christophe de Dinechin][]
+- _LiveScript_ by [Taneli Vatanen][] and [Jen Evers-Corvina][]
+- _ERB_ (Ruby in HTML) by [Lucas Mazza][]
+- _Roboconf_ by [Vincent Zurczak][]
 
 [b]: http://highlightjs.readthedocs.org/en/latest/building-testing.html
-[Jeremy Hull]: https://github.com/sourrust
+[jeremy hull]: https://github.com/sourrust
 [ik]: https://twitter.com/IvanKleshnin/status/514041599484231680
-[Max Mikhailov]: https://github.com/seven-phases-max
-[Bryant Williams]: https://github.com/scien
-[Radek Liska]: https://github.com/Nindaleth
-[Jose Molina Colmenero]: https://github.com/Moliholy
-[Erik Paluka]: https://github.com/paluka
-[Luke Holder]: https://github.com/lukeholder
-[David Mohundro]: https://github.com/drmohundro
+[max mikhailov]: https://github.com/seven-phases-max
+[bryant williams]: https://github.com/scien
+[radek liska]: https://github.com/Nindaleth
+[jose molina colmenero]: https://github.com/Moliholy
+[erik paluka]: https://github.com/paluka
+[luke holder]: https://github.com/lukeholder
+[david mohundro]: https://github.com/drmohundro
 [ps]: https://github.com/OctopusDeploy/Library/blob/master/app/shared/presentation/highlighting/powershell.js
-[Christophe de Dinechin]: https://github.com/c3d
-[Taneli Vatanen]: https://github.com/Daiz-
-[Jen Evers-Corvina]: https://github.com/sevvie
-[Lucas Mazza]: https://github.com/lucasmazza
-[Vincent Zurczak]: https://github.com/vincent-zurczak
-
+[christophe de dinechin]: https://github.com/c3d
+[taneli vatanen]: https://github.com/Daiz-
+[jen evers-corvina]: https://github.com/sevvie
+[lucas mazza]: https://github.com/lucasmazza
+[vincent zurczak]: https://github.com/vincent-zurczak
 
 ## Version 8.2
 
@@ -603,24 +585,24 @@ help us with it, drop a comment into [the issue][#542] on GitHub.
 [demo]: https://highlightjs.org/static/test.html
 [#542]: https://github.com/isagalaev/highlight.js/issues/542
 [ci]: https://travis-ci.org/isagalaev/highlight.js
-[Jeremy Hull]: https://github.com/sourrust
-[Chris Eidhof]: https://github.com/chriseidhof
+[jeremy hull]: https://github.com/sourrust
+[chris eidhof]: https://github.com/chriseidhof
 
 As usually there's a handful of new languages in this release:
 
-- *Groovy* by [Guillaume Laforge][]
-- *Dart* by [Maxim Dikun][]
-- *Dust* by [Michael Allen][]
-- *Scheme* by [JP Verkamp][]
-- *G-Code* by [Adam Joseph Cook][]
-- *Q* from Kx Systems by [Sergey Vidyuk][]
+- _Groovy_ by [Guillaume Laforge][]
+- _Dart_ by [Maxim Dikun][]
+- _Dust_ by [Michael Allen][]
+- _Scheme_ by [JP Verkamp][]
+- _G-Code_ by [Adam Joseph Cook][]
+- _Q_ from Kx Systems by [Sergey Vidyuk][]
 
-[Guillaume Laforge]: https://github.com/glaforge
-[Maxim Dikun]: https://github.com/dikmax
-[Michael Allen]: https://github.com/bfui
-[JP Verkamp]: https://github.com/jpverkamp
-[Adam Joseph Cook]: https://github.com/adamjcook
-[Sergey Vidyuk]: https://github.com/sv
+[guillaume laforge]: https://github.com/glaforge
+[maxim dikun]: https://github.com/dikmax
+[michael allen]: https://github.com/bfui
+[jp verkamp]: https://github.com/jpverkamp
+[adam joseph cook]: https://github.com/adamjcook
+[sergey vidyuk]: https://github.com/sv
 
 Other improvements:
 
@@ -630,55 +612,54 @@ Other improvements:
   the first symbol in parentheses: it's "keyword" in general case and also
   "built_in" for built-in functions in Clojure and Scheme.
 
-[Erik Osheim]: https://github.com/non
-[Lucas Mazza]: https://github.com/lucasmazza
-
+[erik osheim]: https://github.com/non
+[lucas mazza]: https://github.com/lucasmazza
 
 ## Version 8.1
 
 New languages:
 
-- *Gherkin* by [Sam Pikesley][]
-- *Elixir* by [Josh Adams][]
-- *NSIS* by [Jan T. Sott][]
-- *VIM script* by [Jun Yang][]
-- *Protocol Buffers* by [Dan Tao][]
-- *Nix* by [Domen Kožar][]
-- *x86asm* by [innocenat][]
-- *Cap’n Proto* and *Thrift* by [Oleg Efimov][]
-- *Monkey* by [Arthur Bikmullin][]
-- *TypeScript* by [Panu Horsmalahti][]
-- *Nimrod* by [Flaviu Tamas][]
-- *Gradle* by [Damian Mee][]
-- *Haxe* by [Christopher Kaster][]
-- *Swift* by [Chris Eidhof][] and [Nate Cook][]
+- _Gherkin_ by [Sam Pikesley][]
+- _Elixir_ by [Josh Adams][]
+- _NSIS_ by [Jan T. Sott][]
+- _VIM script_ by [Jun Yang][]
+- _Protocol Buffers_ by [Dan Tao][]
+- _Nix_ by [Domen Kožar][]
+- _x86asm_ by [innocenat][]
+- _Cap’n Proto_ and _Thrift_ by [Oleg Efimov][]
+- _Monkey_ by [Arthur Bikmullin][]
+- _TypeScript_ by [Panu Horsmalahti][]
+- _Nimrod_ by [Flaviu Tamas][]
+- _Gradle_ by [Damian Mee][]
+- _Haxe_ by [Christopher Kaster][]
+- _Swift_ by [Chris Eidhof][] and [Nate Cook][]
 
 New styles:
 
-- *Kimbie*, light and dark variants by [Jan T. Sott][]
-- *Color brewer* by [Fabrício Tavares de Oliveira][]
-- *Codepen.io embed* by [Justin Perry][]
-- *Hybrid* by [Nic West][]
+- _Kimbie_, light and dark variants by [Jan T. Sott][]
+- _Color brewer_ by [Fabrício Tavares de Oliveira][]
+- _Codepen.io embed_ by [Justin Perry][]
+- _Hybrid_ by [Nic West][]
 
-[Sam Pikesley]: https://github.com/pikesley
-[Sindre Sorhus]: https://github.com/sindresorhus
-[Josh Adams]: https://github.com/knewter
-[Jan T. Sott]: https://github.com/idleberg
-[Jun Yang]: https://github.com/harttle
-[Dan Tao]: https://github.com/dtao
-[Domen Kožar]: https://github.com/iElectric
+[sam pikesley]: https://github.com/pikesley
+[sindre sorhus]: https://github.com/sindresorhus
+[josh adams]: https://github.com/knewter
+[jan t. sott]: https://github.com/idleberg
+[jun yang]: https://github.com/harttle
+[dan tao]: https://github.com/dtao
+[domen kožar]: https://github.com/iElectric
 [innocenat]: https://github.com/innocenat
-[Oleg Efimov]: https://github.com/Sannis
-[Arthur Bikmullin]: https://github.com/devolonter
-[Panu Horsmalahti]: https://github.com/panuhorsmalahti
-[Flaviu Tamas]: https://github.com/flaviut
-[Damian Mee]: https://github.com/chester1000
-[Christopher Kaster]: http://christopher.kaster.ws
-[Fabrício Tavares de Oliveira]: https://github.com/fabriciotav
-[Justin Perry]: https://github.com/ourmaninamsterdam
-[Nic West]: https://github.com/nicwest
-[Chris Eidhof]: https://github.com/chriseidhof
-[Nate Cook]: https://github.com/natecook1000
+[oleg efimov]: https://github.com/Sannis
+[arthur bikmullin]: https://github.com/devolonter
+[panu horsmalahti]: https://github.com/panuhorsmalahti
+[flaviu tamas]: https://github.com/flaviut
+[damian mee]: https://github.com/chester1000
+[christopher kaster]: http://christopher.kaster.ws
+[fabrício tavares de oliveira]: https://github.com/fabriciotav
+[justin perry]: https://github.com/ourmaninamsterdam
+[nic west]: https://github.com/nicwest
+[chris eidhof]: https://github.com/chriseidhof
+[nate cook]: https://github.com/natecook1000
 
 Other improvements:
 
@@ -701,18 +682,17 @@ Other improvements:
 - Fixed highlighting of generics in Java.
 
 [ll]: http://highlightjs.readthedocs.org/en/latest/api.html#listlanguages
-[Sindre Sorhus]: https://github.com/sindresorhus
-[Heiko August]: https://github.com/auge8472
-[Nikolay Lisienko]: https://github.com/neor-ru
-[Travis Odom]: https://github.com/Burstaholic
-[Jeff Escalante]: https://github.com/jenius
-[Pascal Hurni]: https://github.com/phurni
-[Jiyin Yiyong]: https://github.com/jiyinyiyong
-[Artem A. Klevtsov]: https://github.com/unikum
-[Roman Shmatov]: https://github.com/shmatov
-[Jeremy Hull]: https://github.com/sourrust
-[Matt Diephouse]: https://github.com/mdiep
-
+[sindre sorhus]: https://github.com/sindresorhus
+[heiko august]: https://github.com/auge8472
+[nikolay lisienko]: https://github.com/neor-ru
+[travis odom]: https://github.com/Burstaholic
+[jeff escalante]: https://github.com/jenius
+[pascal hurni]: https://github.com/phurni
+[jiyin yiyong]: https://github.com/jiyinyiyong
+[artem a. klevtsov]: https://github.com/unikum
+[roman shmatov]: https://github.com/shmatov
+[jeremy hull]: https://github.com/sourrust
+[matt diephouse]: https://github.com/mdiep
 
 ## Version 8.0
 
@@ -731,7 +711,7 @@ Here's what did change in an incompatible way:
 
   ```html
   <script type="text/javascript">
-    hljs.configure({classPrefix: ''});
+    hljs.configure({ classPrefix: '' });
     hljs.initHighlightingOnLoad();
   </script>
   ```
@@ -778,11 +758,11 @@ New features:
 
 New languages and styles:
 
-- *Oxygene* by [Carlo Kok][]
-- *Mathematica* by [Daniel Kvasnička][]
-- *Autohotkey* by [Seongwon Lee][]
-- *Atelier* family of styles in 10 variants by [Bram de Haan][]
-- *Paraíso* styles by [Jan T. Sott][]
+- _Oxygene_ by [Carlo Kok][]
+- _Mathematica_ by [Daniel Kvasnička][]
+- _Autohotkey_ by [Seongwon Lee][]
+- _Atelier_ family of styles in 10 variants by [Bram de Haan][]
+- _Paraíso_ styles by [Jan T. Sott][]
 
 Miscellaneous improvements:
 
@@ -793,22 +773,19 @@ Miscellaneous improvements:
 - Big overhaul of relevance counting for a number of languages. Please do report
   bugs about mis-detection of non-trivial code snippets!
 
-[API reference]: http://highlightjs.readthedocs.org/en/latest/api.html
-
+[api reference]: http://highlightjs.readthedocs.org/en/latest/api.html
 [cr]: http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html
 [api docs]: http://highlightjs.readthedocs.org/en/latest/api.html
 [variants]: https://groups.google.com/d/topic/highlightjs/VoGC9-1p5vk/discussion
-[beginKeywords]: https://github.com/isagalaev/highlight.js/commit/6c7fdea002eb3949577a85b3f7930137c7c3038d
+[beginkeywords]: https://github.com/isagalaev/highlight.js/commit/6c7fdea002eb3949577a85b3f7930137c7c3038d
 [php-html]: https://twitter.com/highlightjs/status/408890903017689088
-
-[Carlo Kok]: https://github.com/carlokok
-[Bram de Haan]: https://github.com/atelierbram
-[Daniel Kvasnička]: https://github.com/dkvasnicka
-[Dmitry Smolin]: https://github.com/dimsmol
-[Jeremy Hull]: https://github.com/sourrust
-[Seongwon Lee]: https://github.com/dlimpid
-[Jan T. Sott]: https://github.com/idleberg
-
+[carlo kok]: https://github.com/carlokok
+[bram de haan]: https://github.com/atelierbram
+[daniel kvasnička]: https://github.com/dkvasnicka
+[dmitry smolin]: https://github.com/dimsmol
+[jeremy hull]: https://github.com/sourrust
+[seongwon lee]: https://github.com/dlimpid
+[jan t. sott]: https://github.com/idleberg
 
 ## Version 7.5
 
@@ -848,7 +825,6 @@ Improvements:
 [sourrust]: https://github.com/sourrust
 [d]: http://highlightjs.org/download/
 
-
 ## New core developers
 
 The latest long period of almost complete inactivity in the project coincided
@@ -863,10 +839,9 @@ Hope now we'll be able to work through stuff faster!
 
 P.S. The historical commit is [here][1] for the record.
 
-[Jeremy Hull]: https://github.com/sourrust
-[Oleg Efimov]: https://github.com/sannis
+[jeremy hull]: https://github.com/sourrust
+[oleg efimov]: https://github.com/sannis
 [1]: https://github.com/isagalaev/highlight.js/commit/f3056941bda56d2b72276b97bc0dd5f230f2473f
-
 
 ## Version 7.4
 
@@ -891,14 +866,14 @@ New languages:
 - VB.NET by [Poren Chiang][]
 - Mizar by [Kelley van Evert][]
 
-[Robin Ward]: https://github.com/eviltrout
-[Jason Jacobson]: https://github.com/jayce7
-[Joans Follesø]: https://github.com/follesoe
-[Dan Allen]: https://github.com/mojavelinux
-[Eric Knibbe]: https://github.com/EricFromCanada
-[Kurt Emch]: https://github.com/kemch
-[Poren Chiang]: https://github.com/rschiang
-[Kelley van Evert]: https://github.com/kelleyvanevert
+[robin ward]: https://github.com/eviltrout
+[jason jacobson]: https://github.com/jayce7
+[joans follesø]: https://github.com/follesoe
+[dan allen]: https://github.com/mojavelinux
+[eric knibbe]: https://github.com/EricFromCanada
+[kurt emch]: https://github.com/kemch
+[poren chiang]: https://github.com/rschiang
+[kelley van evert]: https://github.com/kelleyvanevert
 
 New style themes:
 
@@ -910,10 +885,10 @@ New style themes:
 - Foundation by [Dan Allen][]
 
 [noformnocontent]: http://nn.mit-license.org/
-[Damien White]: https://github.com/visoft
-[Alexander Marenin]: https://github.com/ioncreature
-[Simon Madine]: https://github.com/thingsinjars
-[Ivan Sagalaev]: https://github.com/isagalaev
+[damien white]: https://github.com/visoft
+[alexander marenin]: https://github.com/ioncreature
+[simon madine]: https://github.com/thingsinjars
+[ivan sagalaev]: https://github.com/isagalaev
 
 Other notable changes:
 
@@ -925,9 +900,8 @@ Other notable changes:
 - CoffeeScript highlighting is now significantly more robust and rich due to
   input from [Cédric Néhémie][].
 
-[Dmitry Medvinsky]: https://github.com/dmedvinsky
-[Cédric Néhémie]: https://github.com/abe33
-
+[dmitry medvinsky]: https://github.com/dmedvinsky
+[cédric néhémie]: https://github.com/abe33
 
 ## Version 7.3
 
@@ -940,12 +914,12 @@ Other notable changes:
 
 - Improvements to existing languages:
 
-    - interpreter prompt in Python (`>>>` and `...`)
-    - @-properties and classes in CoffeeScript
-    - E4X in JavaScript (by [Oleg Efimov][oe])
-    - new keywords in Perl (by [Kirk Kimmel][kk])
-    - big Ruby syntax update (by [Vasily Polovnyov][vast])
-    - small fixes in Bash
+  - interpreter prompt in Python (`>>>` and `...`)
+  - @-properties and classes in CoffeeScript
+  - E4X in JavaScript (by [Oleg Efimov][oe])
+  - new keywords in Perl (by [Kirk Kimmel][kk])
+  - big Ruby syntax update (by [Vasily Polovnyov][vast])
+  - small fixes in Bash
 
 - Also Oleg Efimov did a great job of moving all the docs for language and style
   developers and contributors from the old wiki under the source code in the
@@ -959,11 +933,9 @@ Other notable changes:
 [kk]: https://github.com/kimmel
 [vast]: https://github.com/vast
 
-
 ## Version 7.2
 
 A regular bug-fix release without any significant new features. Enjoy!
-
 
 ## Version 7.1
 
@@ -986,7 +958,6 @@ A Summer crop:
 [cd]: https://github.com/caseman
 [amd]: http://requirejs.org/docs/whyamd.html
 
-
 ## Version 7.0
 
 The reason for the new major version update is a global change of keyword syntax
@@ -1001,23 +972,23 @@ Notable changes:
   wiki.
 
 - The new unique feature (apparently) among syntax highlighters is highlighting
-  *HTTP* headers and an arbitrary language in the request body. The most useful
-  languages here are *XML* and *JSON* both of which highlight.js does support.
+  _HTTP_ headers and an arbitrary language in the request body. The most useful
+  languages here are _XML_ and _JSON_ both of which highlight.js does support.
   Here's [the detailed post][p] about the feature.
 
-- Two new style themes: a dark "south" *[Pojoaque][]* by Jason Tate and an
+- Two new style themes: a dark "south" _[Pojoaque][]_ by Jason Tate and an
   emulation of*XCode* IDE by [Angel Olloqui][ao].
 
-- Three new languages: *D* by [Aleksandar Ružičić][ar], *R* by [Joe Cheng][jc]
-  and *GLSL* by [Sergey Tikhomirov][st].
+- Three new languages: _D_ by [Aleksandar Ružičić][ar], _R_ by [Joe Cheng][jc]
+  and _GLSL_ by [Sergey Tikhomirov][st].
 
-- *Nginx* syntax has become a million times smaller and more universal thanks to
+- _Nginx_ syntax has become a million times smaller and more universal thanks to
   remaking it in a more generic manner that doesn't require listing all the
   directives in the known universe.
 
-- Function titles are now highlighted in *PHP*.
+- Function titles are now highlighted in _PHP_.
 
-- *Haskell* and *VHDL* were significantly reworked to be more rich and correct
+- _Haskell_ and _VHDL_ were significantly reworked to be more rich and correct
   by their respective maintainers [Jeremy Hull][sr] and [Igor Kalnitsky][ik].
 
 And last but not least, many bugs have been fixed around correctness and
@@ -1035,7 +1006,6 @@ Overall highlight.js currently supports 51 languages and 20 style themes.
 [st]: https://github.com/tikhomirov
 [sr]: https://github.com/sourrust
 [ik]: https://github.com/ikalnitsky
-
 
 ## Version 6.2
 
@@ -1066,7 +1036,6 @@ from all this activity:
 [es]: https://github.com/bolknote
 [log]: https://github.com/isagalaev/highlight.js/commits/
 
-
 ## Version 6.1 — Solarized
 
 [Jeremy Hull][jh] has implemented my dream feature — a port of [Solarized][]
@@ -1080,7 +1049,6 @@ This version also adds a new original style Arta. Its author pumbur maintains a
 [jh]: https://github.com/sourrust
 [solarized]: http://ethanschoonover.com/solarized
 [pb]: https://github.com/pumbur/highlight.js
-
 
 ## Version 6.0
 
@@ -1118,7 +1086,6 @@ download [your own copy][d].
 
 [d]: /soft/highlight/en/download/
 
-
 ## Version 5.14
 
 Fixed bugs in HTML/XML detection and relevance introduced in previous
@@ -1126,7 +1093,6 @@ refactoring.
 
 Also test.html now shows the second best result of language detection by
 relevance.
-
 
 ## Version 5.13
 
@@ -1176,7 +1142,6 @@ Test file test.html has at last become a real test. Now it not only puts the
 detected language name under the code snippet but also tests if it matches the
 expected one. Test summary is displayed right above all language snippets.
 
-
 ## CDN
 
 Fine people at [Yandex][] agreed to host highlight.js on their big fast servers.
@@ -1184,7 +1149,6 @@ Fine people at [Yandex][] agreed to host highlight.js on their big fast servers.
 
 [yandex]: http://yandex.com/
 [l]: http://softwaremaniacs.org/soft/highlight/en/download/
-
 
 ## Version 5.10 — "Paris".
 
@@ -1194,7 +1158,6 @@ couple of small fixes:
 - Tomas Vitvar discovered that TAB replacement doesn't always work when used
   with custom markup in code
 - SQL parsing is even more rigid now and doesn't step over SmallTalk in tests
-
 
 ## Version 5.9
 
@@ -1230,31 +1193,26 @@ welcome to [pick up its maintenance][p] if needed.
 [wp]: http://wordpress.org/
 [p]: http://bazaar.launchpad.net/~isagalaev/+junk/highlight/annotate/342/src/wp_highlight.js.php
 
-
 ## Version 5.8
 
 - Jan Berkel has contributed a definition for Scala. +1 to hotness!
 - All CSS-styles are rewritten to work only inside `<pre>` tags to avoid
   conflicts with host site styles.
 
-
 ## Version 5.7.
 
 Fixed escaping of quotes in VBScript strings.
-
 
 ## Version 5.5
 
 This version brings a small change: now .ini-files allow digits, underscores and
 square brackets in key names.
 
-
 ## Version 5.4
 
 Fixed small but upsetting bug in the packer which caused incorrect highlighting
 of explicitly specified languages. Thanks to Andrew Fedorov for precise
 diagnostics!
-
 
 ## Version 5.3
 
@@ -1277,14 +1235,12 @@ Also in this version:
 [vp]: http://vasily.polovnyov.ru/
 [vd]: http://dolzhenko.blogspot.com/
 
-
 ## Version 5.2
 
 - at last it's possible to replace indentation TABs with something sensible
   (e.g. 2 or 4 spaces)
 - new keywords and built-ins for 1C by Sergey Baranov
 - a couple of small fixes to Apache highlighting
-
 
 ## Version 5.1
 
@@ -1304,7 +1260,6 @@ contributions!
 [drake]: http://drakeguan.org/
 [ke]: http://k-evdokimenko.moikrug.ru/
 
-
 ## Version 5.0
 
 The main change in the new major version of highlight.js is a mechanism for
@@ -1319,7 +1274,6 @@ And as usually there were a couple of minor correctness fixes.
 
 Great thanks to all contributors! Keep using highlight.js.
 
-
 ## Version 4.3
 
 This version comes with two contributions from [Jason Diamond][jd]:
@@ -1330,7 +1284,6 @@ This version comes with two contributions from [Jason Diamond][jd]:
 Plus there are a couple of minor bug fixes for parsing HTML and XML attributes.
 
 [jd]: http://jason.diamond.name/weblog/
-
 
 ## Version 4.2
 
@@ -1355,7 +1308,6 @@ Other changes:
 [voldmar]: http://voldmar.ya.ru/
 [mel]: http://en.wikipedia.org/wiki/Maya_Embedded_Language
 [drake]: http://drakeguan.org/
-
 
 ## Version 4.1
 
@@ -1384,7 +1336,6 @@ getting in the way of [JSMin][].
 [bug]: http://softwaremaniacs.org/forum/viewtopic.php?id=1823
 [jsmin]: http://code.google.com/p/jsmin-php/
 
-
 ## Version 4.0
 
 New major version is a result of vast refactoring and of many contributions.
@@ -1404,7 +1355,6 @@ Invisible new features:
 Changing of a major version number caused by a new format of language definition
 files. If you use some third-party language files they should be updated.
 
-
 ## Version 3.5
 
 A very nice version in my opinion fixing a number of small bugs and slightly
@@ -1418,7 +1368,6 @@ things as CDATA sections and processing instructions (`<? ... ?>`).
 
 [f]: http://softwaremaniacs.org/forum/viewforum.php?id=6
 
-
 ## Version 3.3
 
 [Vladimir Gubarkov][xonix] has provided an interesting and useful addition.
@@ -1426,9 +1375,7 @@ File export.html contains a little program that shows and allows to copy and
 paste an HTML code generated by the highlighter for any code snippet. This can
 be useful in situations when one can't use the script itself on a site.
 
-
 [xonix]: http://xonixx.blogspot.com/
-
 
 ## Version 3.2 consists completely of contributions:
 
@@ -1438,7 +1385,6 @@ be useful in situations when one can't use the script itself on a site.
 - Vladimir Ermakov has compiled a mod for phpBB
 
 Many thanks to you all!
-
 
 ## Version 3.1
 
@@ -1450,7 +1396,6 @@ The engine itself has got a long awaited feature of grouping keywords
 ("keyword", "built-in function", "literal"). No more hacks!
 
 [1]: http://roudakov.ru/
-
 
 ## Version 3.0
 
@@ -1472,8 +1417,7 @@ function initHighlighting that was used to initialize highlighting instead of
 initHighlightingOnLoad a long time ago no longer works. If you by chance still
 use it — replace it with the new one.
 
-[RibKit]: http://ribkit.sourceforge.net/
-
+[ribkit]: http://ribkit.sourceforge.net/
 
 ## Version 2.9
 
@@ -1483,11 +1427,9 @@ I'm glad to announce that in the new version 2.9 has support for:
 - in-string substitutions for Ruby -- `#{...}`
 - strings from from numeric symbol codes (like #XX) for Delphi
 
-
 ## Version 2.8
 
 A maintenance release with more tuned heuristics. Fully backwards compatible.
-
 
 ## Version 2.7
 
@@ -1496,7 +1438,6 @@ A maintenance release with more tuned heuristics. Fully backwards compatible.
 - Ongoing tuning of heuristics
 
 Fixed bugs were rather unpleasant so I encourage everyone to upgrade!
-
 
 ## Version 2.4
 
@@ -1510,12 +1451,10 @@ submit form.
 
 [mail]: mailto:Maniac@SoftwareManiacs.Org
 
-
 ## Version 2.3
 
 This version fixes IE breakage in previous version. My apologies to all who have
 already downloaded that one!
-
 
 ## Version 2.2
 
@@ -1523,7 +1462,6 @@ already downloaded that one!
 - at last fixed parsing of Delphi's escaped apostrophes in strings
 - in Ruby fixed highlighting of keywords 'def' and 'class', same for 'sub' in
   Perl
-
 
 ## Version 2.0
 
@@ -1533,7 +1471,6 @@ already downloaded that one!
   places (like keyword "End" at the end of Delphi classes)
 
 [ak]: http://anton.kovalyov.net/
-
 
 ## Version 1.0
 

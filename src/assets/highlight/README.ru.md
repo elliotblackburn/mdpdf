@@ -4,16 +4,17 @@ Highlight.js — это инструмент для подсветки синт�
 и в браузере, и на сервере. Он работает с практически любой HTML разметкой, не
 зависит от каких-либо фреймворков и умеет автоматически определять язык.
 
-
 ## Начало работы
 
 Минимум, что нужно сделать для использования highlight.js на веб-странице — это
 подключить библиотеку, CSS-стили и вызывать [`initHighlightingOnLoad`][1]:
 
 ```html
-<link rel="stylesheet" href="/path/to/styles/default.css">
+<link rel="stylesheet" href="/path/to/styles/default.css" />
 <script src="/path/to/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 ```
 
 Библиотека найдёт и раскрасит код внутри тегов `<pre><code>`, попытавшись
@@ -37,7 +38,7 @@ Highlight.js — это инструмент для подсветки синт�
 
 Чтобы иметь чуть больше контроля за инициализацией подсветки, вы можете
 использовать функции [`highlightBlock`][3] и [`configure`][4]. Таким образом
-можно управлять тем, *что* и *когда* подсвечивать.
+можно управлять тем, _что_ и _когда_ подсвечивать.
 
 Вот пример инициализации, эквивалентной вызову [`initHighlightingOnLoad`][1], но
 с использованием jQuery:
@@ -55,7 +56,7 @@ $(document).ready(function() {
 highlight.js использовать для них тег `<br>`:
 
 ```javascript
-hljs.configure({useBR: true});
+hljs.configure({ useBR: true });
 
 $('div.code').each(function(i, block) {
   hljs.highlightBlock(block);
@@ -63,7 +64,6 @@ $('div.code').each(function(i, block) {
 ```
 
 Другие опции можно найти в документации функции [`configure`][4].
-
 
 ## Web Workers
 
@@ -76,9 +76,11 @@ $('div.code').each(function(i, block) {
 addEventListener('load', function() {
   var code = document.querySelector('#code');
   var worker = new Worker('worker.js');
-  worker.onmessage = function(event) { code.innerHTML = event.data; }
+  worker.onmessage = function(event) {
+    code.innerHTML = event.data;
+  };
   worker.postMessage(code.textContent);
-})
+});
 ```
 
 В worker.js:
@@ -88,9 +90,8 @@ onmessage = function(event) {
   importScripts('<path>/highlight.pack.js');
   var result = self.hljs.highlightAuto(event.data);
   postMessage(result.value);
-}
+};
 ```
-
 
 ## Установка библиотеки
 
@@ -116,12 +117,10 @@ Highlight.js можно использовать в браузере прямо 
 r.js -o name=hljs paths.hljs=/path/to/highlight out=highlight.js
 ```
 
-
 ## Лицензия
 
 Highlight.js распространяется под лицензией BSD. Подробнее читайте файл
 [LICENSE][7].
-
 
 ## Ссылки
 

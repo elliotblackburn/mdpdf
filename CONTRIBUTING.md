@@ -10,6 +10,6 @@ When submitting bug reports, please provide as much detail as possible and ensur
 
 ## Fixes, features, and code
 
-Before getting started with your feature, fix, or code it's a good idea to ensure there is an issue open for what you're about to do. This ensures we can track discussion 
+Before getting started with your feature, fix, or code it's a good idea to ensure there is an issue open for what you're about to do. This ensures we can track discussion
 
 If you'd like to contibute code we'd be delighted to review and consider it either over GitHub pull requests or by emailing a patch it to one of the project maintainers listed in the [package.json](./package.json). We will try to review and discuss your changes as soon as possible but mdpdf is a side project with few maintainers so please be paitent.
