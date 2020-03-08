@@ -4,8 +4,8 @@
   "description": "Markdown to PDF command line converter",
   "main": "./src/index.js",
   "scripts": {
-    "lint": "prettier --trailing-comma es5 --single-quote --list-different '{src,tests,bin}/**/*.js'",
-    "lint-fix": "prettier --trailing-comma es5 --single-quote --list-different '{src,tests,bin}/**/*.js' --write",
+    "lint": "prettier \"**/*.{js,ts,json,yml,yaml,md,html,css}\"",
+    "format": "prettier --write \"**/*.{js,ts,json,yml,yaml,md,html,css}\"",
     "test": "mocha ./tests/index.js"
   },
   "bin": {
