@@ -4,8 +4,8 @@
   "description": "Markdown to PDF command line converter",
   "main": "./src/index.js",
   "scripts": {
-    "lint": "prettier --trailing-comma es5 --single-quote --list-different '{src,tests,bin}/**/*.js'",
-    "lint-fix": "prettier --trailing-comma es5 --single-quote --list-different '{src,tests,bin}/**/*.js' --write",
+    "lint": "prettier --list-different '{src,tests,bin}/**/*.js'",
+    "format": "prettier --list-different '{src,tests,bin}/**/*.js' --write",
     "test": "mocha ./tests/index.js"
   },
   "bin": {
@@ -42,7 +42,6 @@
     "handlebars": ">=4.7.7",
     "loophole": "^1.1.0",
     "meow": "^5.0.0",
-    "prettier": "^1.15.3",
     "puppeteer": "^2.0.0",
     "showdown": "^1.9.1",
     "showdown-emoji": "^1.0.3",
@@ -51,6 +50,7 @@
   "devDependencies": {
     "execa": "^0.6.3",
     "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
     "should": "^11.2.1"
   }
 }
