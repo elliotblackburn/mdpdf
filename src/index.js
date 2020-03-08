@@ -196,10 +196,9 @@ function createPdf(html, options) {
     })
     .then(() => {
       if (options.debug) {
-        fs.renameSync(tempHtmlPath, options.debug);
-      } else {
-        fs.unlinkSync(tempHtmlPath);
+        fs.copyFileSync(tempHtmlPath, options.debug);
       }
+      fs.unlinkSync(tempHtmlPath);
 
       return options.destination;
     });
