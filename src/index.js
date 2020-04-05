@@ -3,6 +3,7 @@ const path = require('path');
 const Promise = require('bluebird');
 const showdown = require('showdown');
 const showdownEmoji = require('showdown-emoji');
+const showdownHighlight = require('showdown-highlight');
 const puppeteer = require('puppeteer');
 const Handlebars = require('handlebars');
 const loophole = require('loophole');
@@ -51,17 +52,22 @@ function getAllStyles(options) {
   };
 }
 
-function parseMarkdownToHtml(markdown, convertEmojis) {
+function parseMarkdownToHtml(markdown, convertEmojis, enableHighlight) {
   showdown.setFlavor('github');
   const options = {
     prefixHeaderId: false,
     ghCompatibleHeaderId: true,
+    extensions: []
   };
-
+  
   // Sometimes emojis can mess with time representations
   // such as "00:00:00"
   if (convertEmojis) {
-    options.extensions = [showdownEmoji];
+    options.extensions.push(showdownEmoji);
+  }
+
+  if (enableHighlight) {
+    options.extensions.push(showdownHighlight)
   }
 
   const converter = new showdown.Converter(options);
@@ -111,7 +117,7 @@ function convert(options) {
     })
     .then(mdDoc => {
       // Compile the main document
-      let content = parseMarkdownToHtml(mdDoc, !options.noEmoji);
+      let content = parseMarkdownToHtml(mdDoc, !options.noEmoji, !options.noHighlight);
 
       content = utils.qualifyImgSources(content, options);
 

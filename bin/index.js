@@ -32,6 +32,7 @@ const cli = meow(
         --border-right=<size>        Right border (default: 20mm)
         --gh-style                   Enable default gh-styles, when --style is used
         --no-emoji                   Disables emoji conversions
+        --no-highlight               Disables syntax highlighting
         --debug                      Save the generated html for debugging
         --help                       Display this menu
         --version                    Display the application version
@@ -113,6 +114,7 @@ const options = {
   header: header ? path.resolve(header) : null,
   footer: footer ? path.resolve(footer) : null,
   noEmoji: cli.flags.noEmoji || false,
+  noHighlight: cli.flags.noHighlight || false,
   debug: debug
     ? path.resolve(source.slice(0, source.indexOf('.md')) + '.html')
     : null,
