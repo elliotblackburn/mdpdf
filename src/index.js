@@ -18,10 +18,6 @@ const layoutPath = path.join(__dirname, '/layouts/doc-body.hbs');
 const headerLayoutPath = path.join(__dirname, '/layouts/header.hbs');
 const footerLayoutPath = path.join(__dirname, '/layouts/footer.hbs');
 
-// Syntax highlighting
-const highlightJs =
-  'file://' + path.join(__dirname, '/assets/highlight/highlight.pack.js');
-
 function getAllStyles(options) {
   const cssStyleSheets = [];
 
@@ -91,7 +87,6 @@ function convert(options) {
   const styles = getAllStyles(options);
   let css = new Handlebars.SafeString(styles.styleBlock);
   const local = {
-    highlightJs,
     css: css,
   };
 
