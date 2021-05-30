@@ -41,7 +41,7 @@
     "file-url": "^2.0.2",
     "handlebars": "^4.7.6",
     "loophole": "^1.1.0",
-    "meow": "^5.0.0",
+    "meow": "^8.0.0",
     "prettier": "^1.15.3",
     "puppeteer": "^2.0.0",
     "showdown": "^1.9.1",
