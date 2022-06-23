@@ -178,9 +178,8 @@ function createPdf(html, options) {
     .then(() => {
       return puppeteer.launch({ headless: true , args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     })
-    .then(newBrowser => {
-      browser = newBrowser;
-      return browser.newPage();
+    .then(async browser => {
+      return (await browser.pages())[0];
     })
     .then(p => {
       page = p;
