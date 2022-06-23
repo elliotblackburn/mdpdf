@@ -169,30 +169,20 @@ function createPdf(html, options) {
   let browser;
   let page;
 
-  const tempHtmlPath = path.join(
+  const tempHtmlPath = path.resolve(
     path.dirname(options.destination),
     '_temp.html'
   );
 
   return writeFile(tempHtmlPath, html)
-    .then(() => {
-      return puppeteer.launch({ headless: true , args: ['--no-sandbox', '--disable-setuid-sandbox'] });
-    })
-    .then(newBrowser => {
-      browser = newBrowser;
-      return browser.newPage();
-    })
-    .then(p => {
-      page = p;
-
-      return page.goto('file:' + tempHtmlPath, { waitUntil: options.waitUntil ?? 'networkidle0' });
-    })
-    .then(() => {
+    .then(async () => {
+      const browser = await puppeteer.launch({ headless: true , args: ['--no-sandbox', '--disable-setuid-sandbox'] })
+      
+      const page = (await browser.pages())[0];
+      await page.goto('file:' + tempHtmlPath, { waitUntil: options.waitUntil ?? 'networkidle0' });
       const puppetOptions = puppeteerHelper.getOptions(options);
 
-      return page.pdf(puppetOptions);
-    })
-    .then(() => {
+      await page.pdf(puppetOptions);
       return browser.close();
     })
     .then(() => {
