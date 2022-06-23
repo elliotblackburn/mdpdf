@@ -181,9 +181,7 @@ function createPdf(html, options) {
     .then(async browser => {
       return (await browser.pages())[0];
     })
-    .then(p => {
-      page = p;
-
+    .then(page => {
       return page.goto('file:' + tempHtmlPath, { waitUntil: options.waitUntil ?? 'networkidle0' });
     })
     .then(() => {
