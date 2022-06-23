@@ -169,7 +169,7 @@ function createPdf(html, options) {
   let browser;
   let page;
 
-  const tempHtmlPath = path.join(
+  const tempHtmlPath = path.resolve(
     path.dirname(options.destination),
     '_temp.html'
   );
