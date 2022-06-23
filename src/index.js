@@ -185,7 +185,7 @@ function createPdf(html, options) {
     .then(p => {
       page = p;
 
-      return page.goto('file:' + tempHtmlPath, { waitUntil: 'networkidle2' });
+      return page.goto('file:' + tempHtmlPath, { waitUntil: options.waitUntil ?? 'networkidle0' });
     })
     .then(() => {
       const puppetOptions = puppeteerHelper.getOptions(options);
