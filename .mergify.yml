@@ -1,8 +1,0 @@
-pull_request_rules:
-  - name: automatic merge for Dependabot pull requests
-    conditions:
-      - author=dependabot[bot]
-      - status-success=Continous Integration / Test on node 13 os ubuntu-latest
-    actions:
-      merge:
-        method: merge
