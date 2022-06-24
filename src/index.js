@@ -71,7 +71,7 @@ function parseMarkdownToHtml(markdown, convertEmojis, enableHighlight) {
   return converter.makeHtml(markdown);
 }
 
-function convert(options) {
+async function convert(options) {
   options = options || {};
   if (!options.source) {
     throw new Error('Source path must be provided');
@@ -83,45 +83,37 @@ function convert(options) {
 
   options.assetDir = path.dirname(path.resolve(options.source));
 
-  let template = {};
   const styles = getAllStyles(options);
   let css = new Handlebars.SafeString(styles.styleBlock);
   const local = {
     css: css,
   };
 
-  // Pull in the header
-  return prepareHeader(options, styles.styles)
-    .then(header => {
-      options.header = header;
+  let source, template;
+  
+  // Asynchronously convert
+  const promises = [
+    template = readFile(layoutPath, 'utf8').then(Handlebars.compile),
+    source = readFile(options.source, 'utf8'),
+    prepareHeader(options, styles.styles).then(v => options.header = v),
+    prepareFooter(options).then(v => options.footer = v),
+  ];
 
-      // Pull in the footer
-      return prepareFooter(options);
-    })
-    .then(footer => {
-      options.footer = footer;
+  let content = parseMarkdownToHtml(await source, !options.noEmoji, !options.noHighlight);
 
-      // Pull in the handlebars layout so we can build the document body
-      return readFile(layoutPath, 'utf8');
-    })
-    .then(layout => {
-      template = Handlebars.compile(layout);
+  // This step awaits so options is valid
+  await Promise.all(promises);
 
-      // Pull in the document source markdown
-      return readFile(options.source, 'utf8');
-    })
-    .then(mdDoc => {
-      // Compile the main document
-      let content = parseMarkdownToHtml(mdDoc, !options.noEmoji, !options.noHighlight);
+  template = await template;
 
-      content = utils.qualifyImgSources(content, options);
+  content = utils.qualifyImgSources(content, options);
 
-      local.body = new Handlebars.SafeString(content);
-      // Use loophole for this body template to avoid issues with editor extensions
-      const html = loophole.allowUnsafeNewFunction(() => template(local));
+  local.body = new Handlebars.SafeString(content);
 
-      return createPdf(html, options);
-    });
+  // Use loophole for this body template to avoid issues with editor extensions
+  const html = loophole.allowUnsafeNewFunction(() => template(local));
+
+  return createPdf(html, options);
 }
 
 function prepareHeader(options, css) {
