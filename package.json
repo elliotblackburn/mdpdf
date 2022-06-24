@@ -38,7 +38,7 @@
   "dependencies": {
     "bluebird": "^3.4.7",
     "cheerio": "^1.0.0-rc.11",
-    "file-url": "^2.0.2",
+    "file-url": "^4.0.0",
     "handlebars": ">=4.7.7",
     "loophole": "^1.1.0",
     "meow": "^5.0.0",
@@ -51,6 +51,6 @@
     "execa": "^0.6.3",
     "mocha": "^6.2.2",
     "prettier": "^1.19.1",
-    "should": "^11.2.1"
+    "should": "^13.2.3"
   }
 }
