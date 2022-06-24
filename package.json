@@ -42,7 +42,7 @@
     "handlebars": ">=4.7.7",
     "loophole": "^1.1.0",
     "meow": "^5.0.0",
-    "puppeteer": "^2.0.0",
+    "puppeteer": "^15.0.2",
     "showdown": "^1.9.1",
     "showdown-emoji": "^1.0.3",
     "showdown-highlight": "^2.1.3"
