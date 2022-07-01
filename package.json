@@ -45,7 +45,7 @@
     "puppeteer": "^15.0.1",
     "showdown": "^2.1.0",
     "showdown-emoji": "^3.0.0",
-    "showdown-highlight": "^2.1.3"
+    "showdown-highlight": "^3.0.0"
   },
   "devDependencies": {
     "execa": "^0.6.3",
