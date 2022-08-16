@@ -48,11 +48,12 @@ function getAllStyles(options) {
   };
 }
 
-function parseMarkdownToHtml(markdown, convertEmojis, enableHighlight) {
+function parseMarkdownToHtml(markdown, convertEmojis, enableHighlight, simpleLineBreaks) {
   showdown.setFlavor('github');
   const options = {
     prefixHeaderId: false,
     ghCompatibleHeaderId: true,
+    simpleLineBreaks,
     extensions: []
   };
   
@@ -99,7 +100,7 @@ async function convert(options) {
     prepareFooter(options).then(v => options.footer = v),
   ];
 
-  let content = parseMarkdownToHtml(await source, !options.noEmoji, !options.noHighlight);
+  let content = parseMarkdownToHtml(await source, !options.noEmoji, !options.noHighlight, !options.ghStyle);
 
   // This step awaits so options is valid
   await Promise.all(promises);
