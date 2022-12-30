@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "execa": "^0.6.3",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "prettier": "^1.19.1",
     "should": "^13.2.3"
   }
