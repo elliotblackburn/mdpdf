@@ -50,7 +50,7 @@
   "devDependencies": {
     "execa": "^0.6.3",
     "mocha": "^6.2.2",
-    "prettier": "^1.19.1",
+    "prettier": "^2.8.3",
     "should": "^13.2.3"
   }
 }
