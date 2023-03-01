@@ -48,7 +48,7 @@
     "showdown-highlight": "^3.0.0"
   },
   "devDependencies": {
-    "execa": "^0.6.3",
+    "execa": "^7.0.0",
     "mocha": "^6.2.2",
     "prettier": "^1.19.1",
     "should": "^13.2.3"
