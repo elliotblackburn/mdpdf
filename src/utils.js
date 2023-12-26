@@ -1,17 +1,18 @@
-const path = require('path');
-const fs = require('fs');
-const url = require('url');
-const fileUrl = require('file-url');
-const cheerio = require('cheerio');
+import { resolve } from 'path';
+import { readFileSync } from 'fs';
+import { parse } from 'url';
+import fileUrl from 'file-url';
+import cheerio from 'cheerio';
+const { load } = cheerio;
 
-function getStyleBlock(stylesheets) {
+export function getStyleBlock(stylesheets) {
   // Read in all stylesheets and format them into HTML to
   // be placed in the header. We do this because the normal
   // <link...> doesn't work for the headers and footers.
   let styleHtml = '';
   for (const i in stylesheets) {
     if (Object.prototype.hasOwnProperty.call(stylesheets, i)) {
-      const style = fs.readFileSync(stylesheets[i], 'utf8');
+      const style = readFileSync(stylesheets[i], 'utf8');
       styleHtml += '<style>' + style + '</style>';
     }
   }
@@ -19,11 +20,11 @@ function getStyleBlock(stylesheets) {
   return styleHtml;
 }
 
-function getStyles(stylesheets) {
+export function getStyles(stylesheets) {
   let styleHtml = '';
   for (const i in stylesheets) {
     if (Object.prototype.hasOwnProperty.call(stylesheets, i)) {
-      const style = fs.readFileSync(stylesheets[i], 'utf8');
+      const style = readFileSync(stylesheets[i], 'utf8');
       styleHtml += style;
     }
   }
@@ -31,10 +32,10 @@ function getStyles(stylesheets) {
   return styleHtml;
 }
 
-function hasAcceptableProtocol(src) {
+export function hasAcceptableProtocol(src) {
   const acceptableProtocols = ['http:', 'https:'].join('|');
 
-  const theUrl = url.parse(src);
+  const theUrl = parse(src);
 
   if (!theUrl.protocol) {
     return false;
@@ -42,19 +43,19 @@ function hasAcceptableProtocol(src) {
   return new RegExp(acceptableProtocols).test(src);
 }
 
-function processSrc(src, options) {
+export function processSrc(src, options) {
   if (hasAcceptableProtocol(src)) {
     // The protocol is great and okay!
     return src;
   }
 
   // We need to convert it
-  const resolvedSrc = path.resolve(options.assetDir, src);
+  const resolvedSrc = resolve(options.assetDir, src);
   return fileUrl(resolvedSrc);
 }
 
-function qualifyImgSources(html, options) {
-  const $ = cheerio.load(html);
+export function qualifyImgSources(html, options) {
+  const $ = load(html);
 
   $('img').each((i, img) => {
     img.attribs.src = processSrc(img.attribs.src, options);
@@ -62,11 +63,3 @@ function qualifyImgSources(html, options) {
 
   return $.html();
 }
-
-module.exports = {
-  getStyleBlock,
-  getStyles,
-  hasAcceptableProtocol,
-  qualifyImgSources,
-  processSrc,
-};

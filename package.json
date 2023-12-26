@@ -1,11 +1,12 @@
 {
   "name": "mdpdf",
-  "version": "3.0.1",
+  "version": "2.0.4",
   "description": "Markdown to PDF command line converter",
+  "type": "module",
   "main": "./src/index.js",
   "scripts": {
-    "lint": "prettier --list-different '{src,tests,bin}/**/*.js'",
-    "format": "prettier --list-different '{src,tests,bin}/**/*.js' --write",
+    "lint": "prettier --trailing-comma es5 --single-quote --list-different '{src,tests,bin}/**/*.js'",
+    "lint-fix": "prettier --trailing-comma es5 --single-quote --list-different '{src,tests,bin}/**/*.js' --write",
     "test": "mocha ./tests/index.js"
   },
   "bin": {
@@ -36,21 +37,20 @@
   },
   "homepage": "https://github.com/bluehatbrit/mdpdf#readme",
   "dependencies": {
-    "bluebird": "^3.4.7",
-    "cheerio": "^1.0.0-rc.11",
-    "file-url": "^2.0.2",
-    "handlebars": ">=4.7.7",
+    "cheerio": "^0.22.0",
+    "file-url": "^4.0.0",
+    "handlebars": "^4.7.8",
     "loophole": "^1.1.0",
-    "meow": "^5.0.0",
-    "puppeteer": "^15.0.1",
+    "meow": "^13.0.0",
+    "prettier": "^3.1.1",
+    "puppeteer": "^21.6.1",
     "showdown": "^2.1.0",
     "showdown-emoji": "^3.0.0",
-    "showdown-highlight": "^3.0.0"
+    "showdown-highlight": "^3.1.0"
   },
   "devDependencies": {
-    "execa": "^0.6.3",
-    "mocha": "^6.2.2",
-    "prettier": "^1.19.1",
+    "execa": "^8.0.1",
+    "mocha": "^10.2.0",
     "should": "^13.2.3"
   }
 }

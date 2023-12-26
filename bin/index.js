@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-'use strict';
+import { resolve, join, dirname } from 'path';
+import { existsSync } from 'fs';
+import { fileURLToPath } from 'url';
+import meow from 'meow';
+import { convert } from '../src/index.js';
 
-const path = require('path');
-const fs = require('fs');
-const meow = require('meow');
-const mdpdf = require('../');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const cli = meow(
   `
@@ -46,14 +48,32 @@ const cli = meow(
 		variable as the path to your single css stylesheet. The --style flag will override this.
 `,
   {
-    alias: {
-      s: 'style',
-      h: 'header',
-      f: 'footer',
-      d: 'debug',
-      v: 'version',
-      r: 'format',
-      o: 'orientation',
+    importMeta: import.meta,
+    flags: {
+      style: {
+        type: 'string',
+        shortFlag: 's',
+      },
+      header: {
+        type: 'string',
+        shortFlag: 'h',
+      },
+      footer: {
+        type: 'string',
+        shortFlag: 'f',
+      },
+      html: {
+        type: 'string',
+        shortFlag: 'html',
+      },
+      format: {
+        type: 'string',
+        shortFlag: 'r', // 'f' usually denotes file, so we chose 'r' here.
+      },
+      orientation: {
+        type: 'string',
+        shortFlag: 'o',
+      },
     },
   }
 );
@@ -99,8 +119,8 @@ const envStyleName = 'MDPDF_STYLES';
 // If styles have not been provided through the CLI flag, but the environment variable exists
 if (!style && process.env[envStyleName]) {
   // Ensure the css file exists
-  const envCssPath = path.resolve(process.env[envStyleName]);
-  if (fs.existsSync(envCssPath)) {
+  const envCssPath = resolve(process.env[envStyleName]);
+  if (existsSync(envCssPath)) {
     style = envCssPath;
   }
 }
@@ -108,21 +128,21 @@ if (!style && process.env[envStyleName]) {
 const options = {
   ghStyle: style ? ghStyleFlag : true,
   defaultStyle: true,
-  source: path.resolve(source),
-  destination: path.resolve(destination),
-  styles: style ? path.resolve(style) : null,
-  header: header ? path.resolve(header) : null,
-  footer: footer ? path.resolve(footer) : null,
+  source: resolve(source),
+  destination: resolve(destination),
+  styles: style ? resolve(style) : null,
+  header: header ? resolve(header) : null,
+  footer: footer ? resolve(footer) : null,
   noEmoji: cli.flags.noEmoji || false,
   noHighlight: cli.flags.noHighlight || false,
   debug: debug
-    ? path.resolve(source.slice(0, source.indexOf('.md')) + '.html')
+    ? resolve(source.slice(0, source.indexOf('.md')) + '.html')
     : null,
   pdf: {
     format: pdfFormat,
     orientation: pdfOrientation,
     quality: '100',
-    base: path.join('file://', __dirname, '/assets/'),
+    base: join('file://', __dirname, '/assets/'),
     header: {
       height: headerHeight || null,
     },
@@ -138,18 +158,17 @@ const options = {
   },
 };
 
-return mdpdf
-  .convert(options)
-  .then(pdfPath => {
-    // Pretty print for terminals, or just return the output
-    // path for scripts and pipes.
+(async () => {
+  try {
+    const pdfPath = await convert(options);
+
     if (process.stdout.isTTY) {
       console.log('✨ PDF created successfully at:', pdfPath);
     } else {
       console.log(pdfPath);
     }
-  })
-  .catch(err => {
+  } catch (err) {
     console.error(err);
     process.exitCode = 1;
-  });
+  }
+})();

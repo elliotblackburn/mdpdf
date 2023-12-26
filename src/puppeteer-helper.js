@@ -1,4 +1,4 @@
-function getOptions(options) {
+export function getOptions(options) {
   let displayHeaderFooter = false;
   if (options.header || options.footer) {
     displayHeaderFooter = true;
@@ -24,7 +24,3 @@ function getOptions(options) {
     landscape: (options.pdf.orientation && options.pdf.orientation == 'landscape')
   }
 }
-
-module.exports = {
-  getOptions,
-};

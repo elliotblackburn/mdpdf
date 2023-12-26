@@ -1,6 +1,10 @@
-const path = require('path');
+import { resolve, dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
-const createOptions = function(options) {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export function createOptions(options) {
   const source = options.source;
   const destination =
     options.destination || source.slice(0, source.indexOf('.md')) + '.pdf';
@@ -9,16 +13,16 @@ const createOptions = function(options) {
   return {
     ghStyle: true,
     defaultStyle: true,
-    source: path.resolve(source),
-    destination: path.resolve(destination),
-    assetDir: path.dirname(path.resolve(source)),
+    source: resolve(source),
+    destination: resolve(destination),
+    assetDir: dirname(resolve(source)),
     styles: null,
     header: null,
     debug: debug ? source.slice(0, source.indexOf('.md')) + '.html' : null,
     pdf: {
       format: 'A4',
       orientation: 'portrait',
-      base: path.join('file://', __dirname, '/assets/'),
+      base: join('file://', __dirname, '/assets/'),
       header: {
         height: null,
       },
@@ -30,8 +34,4 @@ const createOptions = function(options) {
       },
     },
   };
-};
-
-module.exports = {
-  createOptions,
-};
+}

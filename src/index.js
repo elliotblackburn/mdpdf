@@ -1,40 +1,47 @@
-const fs = require('fs');
-const path = require('path');
-const Promise = require('bluebird');
-const showdown = require('showdown');
-const showdownEmoji = require('showdown-emoji');
-const showdownHighlight = require('showdown-highlight');
-const puppeteer = require('puppeteer');
-const Handlebars = require('handlebars');
-const loophole = require('loophole');
-const utils = require('./utils');
-const puppeteerHelper = require('./puppeteer-helper');
+import {
+  readFile as _readFile,
+  writeFile as _writeFile,
+  copyFileSync,
+  unlinkSync
+} from 'fs';
+import { join, dirname, resolve } from 'path';
+import { promisify } from 'util';
+import { fileURLToPath } from 'url';
+import showdown from 'showdown';
+const { setFlavor, Converter } = showdown;
+import showdownEmoji from 'showdown-emoji';
+import showdownHighlight from 'showdown-highlight';
+import { launch } from 'puppeteer';
+import handlebars from 'handlebars';
+const { SafeString, compile } = handlebars;
+import { allowUnsafeNewFunction } from 'loophole';
+import { getStyles, getStyleBlock, qualifyImgSources } from './utils.js';
+import { getOptions } from './puppeteer-helper.js';
 
-const readFile = Promise.promisify(fs.readFile);
-const writeFile = Promise.promisify(fs.writeFile);
+const readFile = promisify(_readFile);
+const writeFile = promisify(_writeFile);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Main layout template
-const layoutPath = path.join(__dirname, '/layouts/doc-body.hbs');
-const headerLayoutPath = path.join(__dirname, '/layouts/header.hbs');
-const footerLayoutPath = path.join(__dirname, '/layouts/footer.hbs');
+const layoutPath = join(__dirname, '/layouts/doc-body.hbs');
+const headerLayoutPath = join(__dirname, '/layouts/header.hbs');
+const footerLayoutPath = join(__dirname, '/layouts/footer.hbs');
 
 function getAllStyles(options) {
   const cssStyleSheets = [];
 
   // GitHub Markdown Style
   if (options.ghStyle) {
-    cssStyleSheets.push(
-      path.join(__dirname, '/assets/github-markdown-css.css')
-    );
+    cssStyleSheets.push(join(__dirname, '/assets/github-markdown-css.css'));
   }
   // Highlight CSS
-  cssStyleSheets.push(
-    path.join(__dirname, '/assets/highlight/styles/github.css')
-  );
+  cssStyleSheets.push(join(__dirname, '/assets/highlight/styles/github.css'));
 
   // Some additional defaults such as margins
   if (options.defaultStyle) {
-    cssStyleSheets.push(path.join(__dirname, '/assets/default.css'));
+    cssStyleSheets.push(join(__dirname, '/assets/default.css'));
   }
 
   // Optional user given CSS
@@ -43,13 +50,13 @@ function getAllStyles(options) {
   }
 
   return {
-    styles: utils.getStyles(cssStyleSheets),
-    styleBlock: utils.getStyleBlock(cssStyleSheets),
+    styles: getStyles(cssStyleSheets),
+    styleBlock: getStyleBlock(cssStyleSheets),
   };
 }
 
 function parseMarkdownToHtml(markdown, convertEmojis, enableHighlight) {
-  showdown.setFlavor('github');
+  setFlavor('github');
   const options = {
     prefixHeaderId: false,
     ghCompatibleHeaderId: true,
@@ -66,12 +73,12 @@ function parseMarkdownToHtml(markdown, convertEmojis, enableHighlight) {
     options.extensions.push(showdownHighlight)
   }
 
-  const converter = new showdown.Converter(options);
+  const converter = new Converter(options);
 
   return converter.makeHtml(markdown);
 }
 
-async function convert(options) {
+export async function convert(options) {
   options = options || {};
   if (!options.source) {
     throw new Error('Source path must be provided');
@@ -81,10 +88,10 @@ async function convert(options) {
     throw new Error('Destination path must be provided');
   }
 
-  options.assetDir = path.dirname(path.resolve(options.source));
+  options.assetDir = dirname(resolve(options.source));
 
   const styles = getAllStyles(options);
-  let css = new Handlebars.SafeString(styles.styleBlock);
+  let css = new SafeString(styles.styleBlock);
   const local = {
     css: css,
   };
@@ -93,7 +100,7 @@ async function convert(options) {
   
   // Asynchronously convert
   const promises = [
-    template = readFile(layoutPath, 'utf8').then(Handlebars.compile),
+    template = readFile(layoutPath, 'utf8').then(compile),
     source = readFile(options.source, 'utf8'),
     prepareHeader(options, styles.styles).then(v => options.header = v),
     prepareFooter(options).then(v => options.footer = v),
@@ -106,12 +113,12 @@ async function convert(options) {
 
   template = await template;
 
-  content = utils.qualifyImgSources(content, options);
+  content = qualifyImgSources(content, options);
 
-  local.body = new Handlebars.SafeString(content);
+  local.body = new SafeString(content);
 
   // Use loophole for this body template to avoid issues with editor extensions
-  const html = loophole.allowUnsafeNewFunction(() => template(local));
+  const html = allowUnsafeNewFunction(() => template(local));
 
   return createPdf(html, options);
 }
@@ -122,19 +129,19 @@ function prepareHeader(options, css) {
 
     // Get the hbs layout
     return readFile(headerLayoutPath, 'utf8')
-      .then(headerLayout => {
-        headerTemplate = Handlebars.compile(headerLayout);
+      .then((headerLayout) => {
+        headerTemplate = compile(headerLayout);
 
         // Get the header html
         return readFile(options.header, 'utf8');
       })
-      .then(headerContent => {
-        const preparedHeader = utils.qualifyImgSources(headerContent, options);
+      .then((headerContent) => {
+        const preparedHeader = qualifyImgSources(headerContent, options);
 
         // Compile the header template
         const headerHtml = headerTemplate({
-          content: new Handlebars.SafeString(preparedHeader),
-          css: new Handlebars.SafeString(css.replace(/"/gm, "'")),
+          content: new SafeString(preparedHeader),
+          css: new SafeString(css.replace(/"/gm, "'")),
         });
 
         return headerHtml;
@@ -146,8 +153,8 @@ function prepareHeader(options, css) {
 
 function prepareFooter(options) {
   if (options.footer) {
-    return readFile(options.footer, 'utf8').then(footerContent => {
-      const preparedFooter = utils.qualifyImgSources(footerContent, options);
+    return readFile(options.footer, 'utf8').then((footerContent) => {
+      const preparedFooter = qualifyImgSources(footerContent, options);
 
       return preparedFooter;
     });
@@ -161,32 +168,28 @@ function createPdf(html, options) {
   let browser;
   let page;
 
-  const tempHtmlPath = path.resolve(
-    path.dirname(options.destination),
+  const tempHtmlPath = resolve(
+    dirname(options.destination),
     '_temp.html'
   );
 
   return writeFile(tempHtmlPath, html)
     .then(async () => {
-      const browser = await puppeteer.launch({ headless: true , args: ['--no-sandbox', '--disable-setuid-sandbox'] })
+      const browser = await launch({ headless: 'new' , args: ['--no-sandbox', '--disable-setuid-sandbox'] })
       
       const page = (await browser.pages())[0];
       await page.goto('file:' + tempHtmlPath, { waitUntil: options.waitUntil ?? 'networkidle0' });
-      const puppetOptions = puppeteerHelper.getOptions(options);
+      const puppetOptions = getOptions(options);
 
       await page.pdf(puppetOptions);
       return browser.close();
     })
     .then(() => {
       if (options.debug) {
-        fs.copyFileSync(tempHtmlPath, options.debug);
+        copyFileSync(tempHtmlPath, options.debug);
       }
-      fs.unlinkSync(tempHtmlPath);
+      unlinkSync(tempHtmlPath);
 
       return options.destination;
     });
 }
-
-module.exports = {
-  convert,
-};
