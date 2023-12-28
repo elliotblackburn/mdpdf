@@ -28,7 +28,7 @@ Install locally to access the API.
 ## Example usage
 
 * `mdpdf README.md` - Simple convert using GitHub Markdown CSS and some additional basic stylings.
-* `mdpdf README.md --style styles.css --header header.hbs --hHeight 22` - Convert with custom styling with a header of height 22mm.
+* `mdpdf README.md --style styles.css --header header.hbs --h-height 22` - Convert with custom styling with a header of height 22mm.
 
 ## Options
 
