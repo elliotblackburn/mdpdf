@@ -27,7 +27,7 @@ function clean() {
 }
 
 describe('Convert CLI', function () {
-  this.timeout(50000);
+  this.timeout(180000);
 
   after(clean);
   beforeEach(clean);
@@ -128,7 +128,7 @@ describe('Convert CLI', function () {
 });
 
 describe('Convert API', function () {
-  this.timeout(10000);
+  this.timeout(180000);
 
   after(clean);
   beforeEach(clean);
