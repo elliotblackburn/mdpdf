@@ -108,3 +108,20 @@ mdpdf.convert(options).then((pdfPath) => {
     * `header` - A sub object which contains some header settings
         * `height` - Height of the documents header in mm (default 45mm). If you wish to use a header, then this must be set.
     * `border` - The document borders
+
+## Docker Usage
+
+To build the Docker image for mdpdf, use the following command:
+
+```bash
+docker build -t mdpdf .
+```
+
+To run mdpdf within a Docker container, you can use the following command. This example mounts the current directory to the `/app` directory inside the container and converts `example.md` to `example.pdf`:
+
+```bash
+docker run --rm -v $(pwd):/app mdpdf example.md
+```
+
+This allows you to use mdpdf without needing to install Node.js or any dependencies on your host machine, only Docker is required.
+
