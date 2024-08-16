@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/bluehatbrit/mdpdf#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
+    "cheerio": "1.0.0-rc.12",
     "file-url": "^4.0.0",
     "handlebars": "^4.7.8",
     "loophole": "^1.1.0",
