@@ -57,7 +57,7 @@
   "devDependencies": {
     "@types/chai": "^5.2.1",
     "@types/handlebars": "^4.0.40",
-    "@types/node": "^22.14.1",
+    "@types/node": "^24.3.0",
     "@types/puppeteer": "^5.4.7",
     "@types/showdown": "^2.0.6",
     "chai": "^5.2.0",
