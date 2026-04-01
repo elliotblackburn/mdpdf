@@ -23,7 +23,7 @@ jobs:
       # latest for the newest tag semver tag push
       - name: Generate docker image meta tags
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: ghcr.io/elliotblackburn/mdpdf
           flavor: |
