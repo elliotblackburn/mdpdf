@@ -2,9 +2,8 @@ import { resolve } from 'path';
 import { readFileSync } from 'fs';
 import { parse } from 'url';
 import fileUrl from 'file-url';
-import cheerio from 'cheerio';
+import { load } from 'cheerio';
 import { AssetOptions } from './types.js';
-const { load } = cheerio;
 
 export function getStyleBlock(stylesheets: string[]): string {
   // Read in all stylesheets and format them into HTML to
